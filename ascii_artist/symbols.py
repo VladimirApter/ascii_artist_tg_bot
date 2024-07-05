@@ -1,4 +1,4 @@
-from sort_ASCII import generate_sorted_ascii_list
+from ascii_artist.sort_ASCII import generate_sorted_ascii_list
 
 
 def _make_RGB_list(ASCII_list):

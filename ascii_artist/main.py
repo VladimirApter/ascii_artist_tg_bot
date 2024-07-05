@@ -3,10 +3,10 @@ from concurrent.futures import ThreadPoolExecutor
 from alive_progress import alive_bar
 from moviepy.editor import VideoFileClip
 
-from ascii_art_maker import convert_img_to_ascii_art
-from extract_frames import extract_frames_from_video
-from create_video import create_and_save_video
-from symbols import make_ASCII_list
+from ascii_artist.ascii_art_maker import convert_img_to_ascii_art
+from ascii_artist.extract_frames import extract_frames_from_video
+from ascii_artist.create_video import create_and_save_video
+from ascii_artist.symbols import make_ASCII_list
 
 
 def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255), symbols=None):

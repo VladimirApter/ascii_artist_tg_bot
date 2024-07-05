@@ -1,5 +1,5 @@
 from PIL import Image, ImageFilter, ImageEnhance
-from ascii_art_draw import create_img_font_drawer, draw_line
+from ascii_artist.ascii_art_draw import create_img_font_drawer, draw_line
 
 ASCII_SYMBOLS, IS_RGB_MODE = [], True
 
