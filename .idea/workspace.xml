@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="147a7abf-3210-41c5-9371-03693ad76708" name="Changes" comment="" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add simple photo processing">
+      <change beforePath="$PROJECT_DIR$/.idea/ascii_artist_tg_bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ascii_artist_tg_bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -13,7 +28,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2ipBPE6wf0pI6nfRxBj6p7T29j9" />
+  <component name="ProjectId" id="2ipB4V6NwW7D8p97hX8hCovSqDs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,18 +37,66 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot"
+    "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot",
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="147a7abf-3210-41c5-9371-03693ad76708" name="Changes" comment="" />
-      <created>1720177612218</created>
+      <changelist id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="" />
+      <created>1720177446883</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1720177612218</updated>
+      <updated>1720177446883</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add main.py">
+      <created>1720177668120</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720177668120</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add simple processing">
+      <created>1720180056202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720180056202</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add ascii artist to the project and adjust it">
+      <created>1720213323701</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720213323701</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add simple photo processing">
+      <created>1720217962508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720217962508</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add main.py" />
+    <MESSAGE value="Add simple processing" />
+    <MESSAGE value="Add ascii artist to the project and adjust it" />
+    <MESSAGE value="Add simple photo processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add simple photo processing" />
   </component>
 </project>

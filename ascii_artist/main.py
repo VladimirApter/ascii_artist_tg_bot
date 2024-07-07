@@ -16,7 +16,7 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
     result_without_audio_path = os.path.join(file_directory_name, f"{file_name}_ascii_art_without_audio.{file_format}")
     result_path = os.path.join(file_directory_name, f"{file_name}_ascii_art.{file_format}")
 
-    current_dir = os.getcwd()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     frames_dir = os.path.join(current_dir, "frames")
     result_frames_dir = os.path.join(current_dir, "result_frames")
 
@@ -69,11 +69,12 @@ def process_video(file_path, result_height, resized_file_path, frames_dir,
             remove_file_path = os.path.join(dir, filename)
             os.unlink(remove_file_path)
 
-    original_audio = VideoFileClip(file_path, verbose=False).audio
+    original_audio = video.audio
     result_without_audio = VideoFileClip(result_without_audio_path, verbose=False)
     result = result_without_audio.set_audio(original_audio)
     result.write_videofile(result_path, audio_codec='aac', verbose=False, logger=None)
 
+    video.close()
     os.remove(result_without_audio_path)
 
 
