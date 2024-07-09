@@ -1,5 +1,4 @@
-from telebot import TeleBot
-import os
+
 
 from config import bot
 import photo_processing, video_processing
@@ -12,12 +11,14 @@ def start(message):
 
 @bot.message_handler(content_types=['photo'])
 def photo_handler(message):
-    photo_processing.get_photo(message)
+    user_data = {}
+    photo_processing.get_photo(message, user_data)
 
 
 @bot.message_handler(content_types=['video'])
-def photo_handler(message):
-    video_processing.get_video(message)
+def video_handler(message):
+    user_data = {}
+    video_processing.get_video(message, user_data)
 
 
 bot.polling(none_stop=True)
