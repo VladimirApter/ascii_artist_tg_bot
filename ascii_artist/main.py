@@ -37,8 +37,7 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
 
 def process_image(result_height, file_path, symbols, is_RGB, bg_color, font_color, photo_quality, result_path):
     print("Обработка картирнки началась")
-    with alive_bar(result_height, title="Преобразование картинки  ") as bar:
-        result_img = convert_img_to_ascii_art(file_path, result_height, symbols, is_RGB, bg_color, font_color, photo_quality, bar)
+    result_img = convert_img_to_ascii_art(file_path, result_height, symbols, is_RGB, bg_color, font_color, photo_quality)
     result_img.save(result_path, optimize=True, quality=photo_quality)
 
 

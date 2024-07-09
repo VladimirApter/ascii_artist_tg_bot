@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add simple photo processing">
-      <change beforePath="$PROJECT_DIR$/.idea/ascii_artist_tg_bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ascii_artist_tg_bot.iml" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add simple video processing, fix ascii artist bugs">
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/ascii_art_maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/ascii_art_maker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -41,6 +44,11 @@
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Projects\ascii_artist_tg_bot" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720217962508</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add simple video processing, fix ascii artist bugs">
+      <created>1720353786518</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720353786518</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +112,7 @@
     <MESSAGE value="Add simple processing" />
     <MESSAGE value="Add ascii artist to the project and adjust it" />
     <MESSAGE value="Add simple photo processing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add simple photo processing" />
+    <MESSAGE value="Add simple video processing, fix ascii artist bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add simple video processing, fix ascii artist bugs" />
   </component>
 </project>

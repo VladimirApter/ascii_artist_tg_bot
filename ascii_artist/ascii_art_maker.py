@@ -46,7 +46,7 @@ def _convert_rgb_to_grey(pixel):
     return r * 0.299 + g * 0.587 + b * 0.114
 
 
-def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color, font_color, quality, bar=None):
+def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color, font_color, quality):
     global ASCII_SYMBOLS, IS_RGB_MODE
     ASCII_SYMBOLS, IS_RGB_MODE = symbols, is_RGB
 
@@ -68,7 +68,5 @@ def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color,
         for pixel in line:
             result_line.append(_convert_pixel_to_ascii_symbol(pixel))
         draw_line(drawer, font, result_line, line_number, font_color)
-        if bar is not None:
-            bar()
 
     return result_img
