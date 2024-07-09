@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Split to several files, solve multi user problem">
-      <change afterPath="$PROJECT_DIR$/make_result.py" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add user data, moved the result making to a separate file">
+      <change afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
     </list>
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720533958949</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add user data, moved the result making to a separate file">
+      <created>1720558208001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720558208001</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +126,7 @@
     <MESSAGE value="Add simple photo processing" />
     <MESSAGE value="Add simple video processing, fix ascii artist bugs" />
     <MESSAGE value="Split to several files, solve multi user problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split to several files, solve multi user problem" />
+    <MESSAGE value="Add user data, moved the result making to a separate file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add user data, moved the result making to a separate file" />
   </component>
 </project>
