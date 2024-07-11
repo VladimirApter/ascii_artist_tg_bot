@@ -5,18 +5,20 @@ from config import bot
 import ascii_artist.main
 
 
-def make_result(message, user_data):
+def _make_result(message, user_data):
     bot.send_message(message.chat.id, 'Начал обрабатывать')
     file_id = user_data['file_id']
-    height = user_data['height']
     file_path = user_data['file_path']
+    height = user_data['height']
+    bg_color = user_data['bg_color']
+    font_color = user_data['font_color']
 
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     with open(file_path, 'wb') as f:
         f.write(downloaded_file)
 
-    ascii_artist.main.main(file_path, height)
+    ascii_artist.main.main(file_path, height, bg_color, font_color)
 
     os.unlink(file_path)
 
@@ -24,7 +26,7 @@ def make_result(message, user_data):
 def send_result(message, user_data):
     result_path = user_data['result_path']
 
-    make_result(message, user_data)
+    _make_result(message, user_data)
 
     with open(result_path, 'rb') as result_file:
         file_type = 'video' if result_path.endswith('.mp4') else 'photo'

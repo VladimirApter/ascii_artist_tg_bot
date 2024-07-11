@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add user data, moved the result making to a separate file">
-      <change afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add height survey, refactor result sending">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/make_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/extract_frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/extract_frames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/symbols.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720558208001</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add height survey, refactor result sending">
+      <created>1720563447806</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720563447806</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +139,7 @@
     <MESSAGE value="Add simple video processing, fix ascii artist bugs" />
     <MESSAGE value="Split to several files, solve multi user problem" />
     <MESSAGE value="Add user data, moved the result making to a separate file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user data, moved the result making to a separate file" />
+    <MESSAGE value="Add height survey, refactor result sending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add height survey, refactor result sending" />
   </component>
 </project>

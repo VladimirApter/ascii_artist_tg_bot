@@ -16,5 +16,4 @@ def create_img_font_drawer(original_img_size, font_size, bg_color=(0, 0, 0)):
 
 def draw_line(drawer, font, line, line_number, font_color=(255, 255, 255)):
     for x, symbol in enumerate(line):
-        drawer.text((x * font.size, line_number * font.size), symbol, font=font,
-                  fill=font_color)
+        drawer.text((x * font.size, line_number * font.size), symbol, font=font, fill=font_color)

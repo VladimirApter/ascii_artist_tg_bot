@@ -1,7 +1,7 @@
 import os
 
 from config import bot, CURRENT_DIR
-from user_survey import get_height
+from user_survey import survey_start
 
 
 VIDEOS_DIR_PATH = os.path.join(CURRENT_DIR, 'ascii_artist', 'videos')
@@ -22,4 +22,4 @@ def get_video(message, user_data):
     bot.reply_to(message, "Принял видео")
     bot.send_message(message.chat.id, 'Теперь напиши сколько символов хочешь по вертикали')
 
-    bot.register_next_step_handler(message, get_height, user_data)
+    bot.register_next_step_handler(message, survey_start, user_data)

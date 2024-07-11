@@ -2,6 +2,7 @@ import cv2
 import os
 from colorama import Fore, Style
 
+
 def extract_frames_from_video(video_path, output_folder, prefix='frame', format='png'):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
