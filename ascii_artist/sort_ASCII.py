@@ -14,7 +14,7 @@ def generate_sorted_ascii_list(symbols=None):
     if symbols is None or len(symbols) == 0:
         symbols = ASCII
     ASCII_list = "".join(set(symbols))
-    font = ImageFont.truetype('ebrima.ttf', 36)
+    font = ImageFont.truetype('msjhl.ttc', 36)
     #font = ImageFont.truetype('arial.ttf', 36)
     images = {}
     for symbol in ASCII_list:
@@ -23,7 +23,6 @@ def generate_sorted_ascii_list(symbols=None):
 
         drawer = ImageDraw.Draw(img)
         drawer.text((3, 0), symbol, font=font, fill=(0, 0, 0))
-        #img.save("C:\\Users\\admin\\Desktop\\fiit\\ascii artist\\project\\sort\\" + f'{symbol}.png')
 
         images[symbol] = img
 

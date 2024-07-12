@@ -12,13 +12,14 @@ def _make_result(message, user_data):
     height = user_data['height']
     bg_color = user_data['bg_color']
     font_color = user_data['font_color']
+    symbols = user_data['symbols']
 
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     with open(file_path, 'wb') as f:
         f.write(downloaded_file)
 
-    ascii_artist.main.main(file_path, height, bg_color, font_color)
+    ascii_artist.main.main(file_path, height, bg_color, font_color, symbols)
 
     os.unlink(file_path)
 

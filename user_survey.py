@@ -1,4 +1,5 @@
 import re
+from telebot import types
 
 from config import bot
 from work_with_result import send_result
@@ -28,6 +29,21 @@ def _get_font_color(message, user_data):
     font_color = list(map(int, filter(None, re.split(r'\W+', message.text))))
     user_data['font_color'] = font_color
 
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    standard_btn = types.KeyboardButton('стандартный набор')
+    markup.add(standard_btn)
+
+    bot.send_message(message.chat.id, 'Можешь написать символы из которых будет создаваться арт или использовать стандартный набор', reply_markup=markup)
+    bot.register_next_step_handler(message, _get_symbols, user_data)
+
+
+def _get_symbols(message, user_data):
+    symbols = message.text
+    if message.text == 'стандартный набор':
+        symbols = None
+    user_data['symbols'] = symbols
+
+    bot.send_message(message.chat.id, 'Настройки сохранены', reply_markup=types.ReplyKeyboardRemove())
     survey_finish(message, user_data)
 
 
