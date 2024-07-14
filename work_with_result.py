@@ -1,12 +1,12 @@
 import os
 from telebot.types import InputMedia
+import time
 
 from config import bot
 import ascii_artist.main
 
 
 def _make_result(message, user_data):
-    bot.send_message(message.chat.id, 'Начал обрабатывать')
     file_id = user_data['file_id']
     file_path = user_data['file_path']
     height = user_data['height']
@@ -14,11 +14,13 @@ def _make_result(message, user_data):
     font_color = user_data['font_color']
     symbols = user_data['symbols']
 
+    bot.send_message(message.chat.id, 'Загружаю твой файл')
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     with open(file_path, 'wb') as f:
         f.write(downloaded_file)
 
+    bot.send_message(message.chat.id, 'Начал обрабатывать')
     ascii_artist.main.main(file_path, height, bg_color, font_color, symbols)
 
     os.unlink(file_path)

@@ -1,6 +1,5 @@
 import os
 from concurrent.futures import ThreadPoolExecutor
-from alive_progress import alive_bar
 from moviepy.editor import VideoFileClip
 
 from ascii_artist.ascii_art_maker import convert_img_to_ascii_art
@@ -30,7 +29,7 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
         _process_image(result_height, file_path, symbols, is_RGB, bg_color,
                        font_color, photo_quality, result_path)
     else:
-        _process_video(file_path, result_height, resized_file_path, frames_dir,
+        _process_video(result_height, file_path, resized_file_path, frames_dir,
                        result_frames_dir, symbols, is_RGB,
                        result_without_audio_path, result_path, bg_color,
                        font_color, video_quality)
@@ -42,7 +41,7 @@ def _process_image(result_height, file_path, symbols, is_RGB, bg_color, font_col
     result_img.save(result_path, optimize=True, quality=photo_quality)
 
 
-def _process_video(file_path, result_height, resized_file_path, frames_dir,
+def _process_video(result_height, file_path, resized_file_path, frames_dir,
                    result_frames_dir, symbols, is_RGB,
                    result_without_audio_path, result_path, bg_color,
                    font_color, video_quality):
@@ -58,9 +57,8 @@ def _process_video(file_path, result_height, resized_file_path, frames_dir,
 
     frame_groups = [range(i * frames_per_group, min((i + 1) * frames_per_group, frames_count)) for i in range((frames_count + frames_per_group - 1) // frames_per_group)]
     with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
-        with alive_bar(frames_count, title="Преобразование видео  ") as bar:
-            for _ in executor.map(lambda group: _process_frame_group(group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bar, bg_color, font_color, video_quality), frame_groups):
-                pass
+        for _ in executor.map(lambda group: _process_frame_group(group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality), frame_groups):
+            pass
 
     create_and_save_video(result_frames_dir, result_without_audio_path, "frame", "png", fps)
 
@@ -78,9 +76,8 @@ def _process_video(file_path, result_height, resized_file_path, frames_dir,
     os.remove(result_without_audio_path)
 
 
-def _process_frame_group(frame_group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bar, bg_color, font_color, video_quality):
+def _process_frame_group(frame_group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality):
     for i in frame_group:
-        bar()
         frame_path = os.path.join(frames_dir, f"frame_{i}.png")
         result_frame = convert_img_to_ascii_art(frame_path, result_height, symbols, is_RGB, bg_color, font_color, video_quality)
         result_frame_path = os.path.join(result_frames_dir, f"frame_{i}.png")
