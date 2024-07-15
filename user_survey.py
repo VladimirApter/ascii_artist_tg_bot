@@ -17,26 +17,58 @@ colors_buttons_markup.row(*colors_buttons)
 
 
 def start_survey(message, user_data):
-    _get_height(message, user_data)
+    bot.send_message(message.chat.id, 'Теперь напиши сколько символов хочешь по вертикали')
+    bot.register_next_step_handler(message, _get_height, user_data)
 
 
 def _get_height(message, user_data):
-    height = int(message.text.strip())
+    file_type = user_data['file_type']
+
+    valid = False
+    height = 0
+    try:
+        height = int(message.text.strip(' ,!.символ(ов/а)symbols'))
+    except (ValueError, AttributeError):
+        pass
+    else:
+        if file_type == 'photo' and 1 <= height <= 1000:
+            valid = True
+        elif file_type == 'video' and 1 <= height <= 200:
+            valid = True
+
+    if not valid:
+        if file_type == 'photo':
+            bot.send_message(message.chat.id, 'Количество символов для фото - число от 1 до 1000, попробуй еще раз')
+        elif file_type == 'video':
+            bot.send_message(message.chat.id, 'Количество символов для видео - число от 1 до 200, попробуй еще раз')
+        bot.register_next_step_handler(message, _get_height, user_data)
+        return
+
     user_data['height'] = height
 
-    bot.send_message(message.chat.id, 'Выбери цвет фона или напиши свой в формате rgb, например: 200 150 255', reply_markup=colors_buttons_markup)
+    bot.send_message(message.chat.id, 'Выбери цвет фона или напиши свой в формате rgb (например: 200 150 255)', reply_markup=colors_buttons_markup)
     bot.register_next_step_handler(message, _get_bg_color, user_data)
 
 
 def _get_bg_color(message, user_data):
-    user_data['bg_color'] = _get_color(message)
+    bg_color = _get_color(message)
+    if bg_color is None:
+        bot.send_message(message.chat.id, 'Неверный формат, свой цвет можно задать в формате rgb: r g b (r, g, b - любые числа от 0 до 255), попробуй еще раз')
+        bot.register_next_step_handler(message, _get_bg_color, user_data)
+        return
+    user_data['bg_color'] = bg_color
 
     bot.send_message(message.chat.id, 'Теперь так же укажи цвет шрифта', reply_markup=colors_buttons_markup)
     bot.register_next_step_handler(message, _get_font_color, user_data)
 
 
 def _get_font_color(message, user_data):
-    user_data['font_color'] = _get_color(message)
+    font_color = _get_color(message)
+    if font_color is None:
+        bot.send_message(message.chat.id, 'Неверный формат, свой цвет можно задать в формате rgb: r g b (r, g, b - любые числа от 0 до 255), попробуй еще раз')
+        bot.register_next_step_handler(message, _get_font_color, user_data)
+        return
+    user_data['font_color'] = font_color
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     standard_btn = types.KeyboardButton('стандартный набор')
@@ -47,14 +79,29 @@ def _get_font_color(message, user_data):
 
 
 def _get_color(message):
-    text = message.text.strip()
+    try:
+        text = message.text.strip()
+    except AttributeError:
+        return None
     if text in colors_dict:
         return colors_dict[text]
-    return list(map(int, filter(None, re.split(r'\W+', message.text))))
+
+    try:
+        color_list = list(map(int, filter(None, re.split(r'[^\d-]', message.text))))
+        if len(color_list) != 3 or not all(0 <= color_channel <= 255 for color_channel in color_list):
+            return None
+        return color_list
+    except ValueError:
+        return None
 
 
 def _get_symbols(message, user_data):
-    symbols = message.text.strip() + ' '
+    try:
+        symbols = message.text.strip() + ' '
+    except AttributeError:
+        bot.send_message('Отправь текстовые символы из которых будет создаваться арт, либо нажми "стандартный набор", чтобы использовать символы по умолчанию')
+        bot.register_next_step_handler(message, _get_symbols, user_data)
+        return
     if message.text == 'стандартный набор':
         symbols = None
     user_data['symbols'] = symbols

@@ -27,14 +27,19 @@ def _make_result(message, user_data):
 
 
 def send_result(message, user_data):
+    height = user_data['height']
     result_path = user_data['result_path']
+    file_type = user_data['file_type']
 
     _make_result(message, user_data)
 
     with open(result_path, 'rb') as result_file:
-        file_type = 'video' if result_path.endswith('.mp4') else 'photo'
-        media = [InputMedia(type=file_type, media=result_file)]
-        bot.send_media_group(message.chat.id, media)
+        if file_type == 'photo' and height <= 60:
+            bot.send_photo(message.chat.id, result_file)
+        elif file_type == 'video' and height <= 60:
+            bot.send_video(message.chat.id, result_file)
+        else:
+            bot.send_document(message.chat.id, result_file)
 
     os.unlink(result_path)
 

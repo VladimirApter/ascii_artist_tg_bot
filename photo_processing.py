@@ -20,7 +20,5 @@ def get_photo(message, user_data):
     user_data['result_path'] = result_path
 
     bot.reply_to(message, "Принял фото")
-    bot.send_message(message.chat.id, 'Теперь напиши сколько символов хочешь по вертикали')
-
-    bot.register_next_step_handler(message, start_survey, user_data)
+    start_survey(message, user_data)
 
