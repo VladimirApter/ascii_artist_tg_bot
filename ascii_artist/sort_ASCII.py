@@ -14,7 +14,7 @@ def generate_sorted_ascii_list(symbols=None):
     if symbols is None or len(symbols) == 0:
         symbols = ASCII
     ASCII_list = "".join(set(symbols))
-    font = ImageFont.truetype(r"C:\Users\admin\Downloads\Noto_Sans\static\NotoSans-SemiBold.ttf", 36)
+    font = ImageFont.truetype(r"C:\Users\admin\Downloads\Noto_Sans_Mono\static\NotoSansMono-Bold.ttf", 36)
     #font = ImageFont.truetype('arial.ttf', 36)
     images = {}
     for symbol in ASCII_list:
