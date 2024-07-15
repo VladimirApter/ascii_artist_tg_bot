@@ -8,7 +8,7 @@ from ascii_artist.create_video import create_and_save_video
 from ascii_artist.symbols import make_ASCII_list
 
 
-def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255), symbols=None):
+def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255), symbols=None, true_color_mode=False):
     bg_color, font_color = tuple(bg_color), tuple(font_color)
     file_directory_name, file = os.path.split(os.path.abspath(file_path))
     file_name, file_format = file.split('.')
@@ -21,30 +21,32 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
     result_frames_dir = os.path.join(current_dir, "result_frames")
 
     symbols, is_RGB = make_ASCII_list(bg_color, font_color, symbols)
+    if true_color_mode:
+        symbols.remove(' ')
 
     photo_quality = max(150 - result_height, 50)
     video_quality = photo_quality * 0.7
 
     if file_format == 'jpg' or file_format == 'png':
         _process_image(result_height, file_path, symbols, is_RGB, bg_color,
-                       font_color, photo_quality, result_path)
+                       font_color, photo_quality, result_path, true_color_mode)
     else:
         _process_video(result_height, file_path, resized_file_path, frames_dir,
                        result_frames_dir, symbols, is_RGB,
                        result_without_audio_path, result_path, bg_color,
-                       font_color, video_quality)
+                       font_color, video_quality, true_color_mode)
 
 
-def _process_image(result_height, file_path, symbols, is_RGB, bg_color, font_color, photo_quality, result_path):
+def _process_image(result_height, file_path, symbols, is_RGB, bg_color, font_color, photo_quality, result_path, true_color_mode):
     print("Обработка картирнки началась")
-    result_img = convert_img_to_ascii_art(file_path, result_height, symbols, is_RGB, bg_color, font_color, photo_quality)
+    result_img = convert_img_to_ascii_art(file_path, result_height, symbols, is_RGB, bg_color, font_color, photo_quality, true_color_mode)
     result_img.save(result_path, optimize=True, quality=photo_quality)
 
 
 def _process_video(result_height, file_path, resized_file_path, frames_dir,
                    result_frames_dir, symbols, is_RGB,
                    result_without_audio_path, result_path, bg_color,
-                   font_color, video_quality):
+                   font_color, video_quality, true_color_mode):
     print(f"Обработка видео началась")
 
     video = VideoFileClip(file_path, verbose=False)
@@ -57,7 +59,7 @@ def _process_video(result_height, file_path, resized_file_path, frames_dir,
 
     frame_groups = [range(i * frames_per_group, min((i + 1) * frames_per_group, frames_count)) for i in range((frames_count + frames_per_group - 1) // frames_per_group)]
     with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
-        for _ in executor.map(lambda group: _process_frame_group(group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality), frame_groups):
+        for _ in executor.map(lambda group: _process_frame_group(group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality, true_color_mode), frame_groups):
             pass
 
     create_and_save_video(result_frames_dir, result_without_audio_path, "frame", "png", fps)
@@ -76,9 +78,9 @@ def _process_video(result_height, file_path, resized_file_path, frames_dir,
     os.remove(result_without_audio_path)
 
 
-def _process_frame_group(frame_group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality):
+def _process_frame_group(frame_group, frames_dir, result_frames_dir, symbols, is_RGB, result_height, bg_color, font_color, video_quality, true_color_mode):
     for i in frame_group:
         frame_path = os.path.join(frames_dir, f"frame_{i}.png")
-        result_frame = convert_img_to_ascii_art(frame_path, result_height, symbols, is_RGB, bg_color, font_color, video_quality)
+        result_frame = convert_img_to_ascii_art(frame_path, result_height, symbols, is_RGB, bg_color, font_color, video_quality, true_color_mode)
         result_frame_path = os.path.join(result_frames_dir, f"frame_{i}.png")
         result_frame.save(result_frame_path, optimize=True, quality=video_quality)

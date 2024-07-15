@@ -2,7 +2,7 @@ import re
 from telebot import types
 
 from config import bot
-from work_with_result import send_result
+from work_with_result import make_result
 
 
 colors_dict = {'⚫️': [0, 0, 0], '⚪️': [255, 255, 255], '🔴': [255, 0, 0],
@@ -46,8 +46,32 @@ def _get_height(message, user_data):
 
     user_data['height'] = height
 
-    bot.send_message(message.chat.id, 'Выбери цвет фона или напиши свой в формате rgb (например: 200 150 255)', reply_markup=colors_buttons_markup)
-    bot.register_next_step_handler(message, _get_bg_color, user_data)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    regular_btn = types.KeyboardButton('обычный')
+    true_color_btn = types.KeyboardButton('true color')
+    markup.row(regular_btn, true_color_btn)
+    bot.send_message(message.chat.id, 'Теперь нужно выбрать режим обработки', reply_markup=markup)
+    bot.register_next_step_handler(message, _get_mode, user_data)
+
+
+def _get_mode(message, user_data):
+    if message.text == 'обычный':
+        user_data['mode'] = 'regular'
+
+        bot.send_message(message.chat.id, 'Выбери цвет фона или напиши свой в формате rgb (например: 200 150 255)', reply_markup=colors_buttons_markup)
+        bot.register_next_step_handler(message, _get_bg_color, user_data)
+    elif message.text == 'true color':
+        user_data['mode'] = 'true color'
+
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        standard_btn = types.KeyboardButton('стандартный набор')
+        markup.add(standard_btn)
+
+        bot.send_message(message.chat.id, 'Можешь написать символы из которых будет создаваться арт или использовать стандартный набор', reply_markup=markup)
+        bot.register_next_step_handler(message, _get_symbols, user_data)
+    else:
+        bot.send_message(message.chat.id, 'Чтобы выбрать режим нажми на одну из кнопок ниже')
+        bot.register_next_step_handler(message, _get_mode, user_data)
 
 
 def _get_bg_color(message, user_data):
@@ -111,4 +135,4 @@ def _get_symbols(message, user_data):
 
 
 def finish_survey(message, user_data):
-    send_result(message, user_data)
+    make_result(message, user_data)
