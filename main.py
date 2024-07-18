@@ -1,12 +1,13 @@
-
+import photo_processing
+import video_processing
+from telebot import types
 
 from config import bot
-import photo_processing, video_processing
 
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, "Готов работать, отправь изображение или видео")
+    bot.send_message(message.chat.id, "Готов работать, отправь изображение или видео", reply_markup=types.ReplyKeyboardRemove())
 
 
 @bot.message_handler(content_types=['photo'])

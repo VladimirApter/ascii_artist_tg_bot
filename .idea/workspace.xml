@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add height survey, refactor result sending">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change font to noto monospaced">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/extract_frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/extract_frames.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/symbols.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Projects/ascii_artist_tg_bot&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Projects\ascii_artist_tg_bot" />
@@ -117,7 +112,49 @@
       <option name="project" value="LOCAL" />
       <updated>1720563447806</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add bg and font colors survey, remove rgb split from ascii artist">
+      <created>1720705239799</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720705239800</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add symbols survey, fix font bug">
+      <created>1720785844776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720785844776</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add colors survey buttons">
+      <created>1720952175972</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720952175972</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add validation of user input">
+      <created>1721030880378</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721030880378</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add modes survey, true color mode">
+      <created>1721042341880</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721042341880</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Change font to noto monospaced">
+      <created>1721043389062</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721043389062</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +177,12 @@
     <MESSAGE value="Split to several files, solve multi user problem" />
     <MESSAGE value="Add user data, moved the result making to a separate file" />
     <MESSAGE value="Add height survey, refactor result sending" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add height survey, refactor result sending" />
+    <MESSAGE value="Add bg and font colors survey, remove rgb split from ascii artist" />
+    <MESSAGE value="Add symbols survey, fix font bug" />
+    <MESSAGE value="Add colors survey buttons" />
+    <MESSAGE value="Add validation of user input" />
+    <MESSAGE value="Add modes survey, true color mode" />
+    <MESSAGE value="Change font to noto monospaced" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change font to noto monospaced" />
   </component>
 </project>

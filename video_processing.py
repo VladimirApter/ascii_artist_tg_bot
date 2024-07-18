@@ -1,13 +1,15 @@
 import os
+from telebot import types
 
 from config import bot, CURRENT_DIR
-from user_survey import start_survey
 
 
 VIDEOS_DIR_PATH = os.path.join(CURRENT_DIR, 'ascii_artist', 'videos')
 
 
 def get_video(message, user_data):
+    from user_survey import start_survey  # to solve circular import problem
+
     file_id = message.video.file_id
     user_data['file_id'] = file_id
 
@@ -19,5 +21,6 @@ def get_video(message, user_data):
     result_path = os.path.join(VIDEOS_DIR_PATH, result_file_name)
     user_data['result_path'] = result_path
 
-    bot.reply_to(message, "Принял видео")
+    bot.reply_to(message, "Принял видео", reply_markup=types.ReplyKeyboardRemove())
     start_survey(message, user_data)
+

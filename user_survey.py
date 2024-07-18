@@ -16,11 +16,29 @@ for color in colors_dict.keys():
 colors_buttons_markup.row(*colors_buttons)
 
 
+def restart_possibility(handler):
+    def inner(message, user_data):
+        if message.photo:
+            from photo_processing import get_photo  # to solve circular import problem
+            user_data = {'file_type': 'photo'}
+            get_photo(message, user_data)
+            return
+        elif message.video:
+            from video_processing import get_video  # to solve circular import problem
+            user_data = {'file_type': 'video'}
+            get_video(message, user_data)
+
+        handler(message, user_data)
+
+    return inner
+
+
 def start_survey(message, user_data):
     bot.send_message(message.chat.id, 'Теперь напиши сколько символов хочешь по вертикали')
     bot.register_next_step_handler(message, _get_height, user_data)
 
 
+@restart_possibility
 def _get_height(message, user_data):
     file_type = user_data['file_type']
 
@@ -54,6 +72,7 @@ def _get_height(message, user_data):
     bot.register_next_step_handler(message, _get_mode, user_data)
 
 
+@restart_possibility
 def _get_mode(message, user_data):
     if message.text == 'обычный':
         user_data['mode'] = 'regular'
@@ -74,6 +93,7 @@ def _get_mode(message, user_data):
         bot.register_next_step_handler(message, _get_mode, user_data)
 
 
+@restart_possibility
 def _get_bg_color(message, user_data):
     bg_color = _get_color(message)
     if bg_color is None:
@@ -82,10 +102,11 @@ def _get_bg_color(message, user_data):
         return
     user_data['bg_color'] = bg_color
 
-    bot.send_message(message.chat.id, 'Теперь так же укажи цвет шрифта', reply_markup=colors_buttons_markup)
+    bot.send_message(message.chat.id, 'Теперь укажи цвет шрифта', reply_markup=colors_buttons_markup)
     bot.register_next_step_handler(message, _get_font_color, user_data)
 
 
+@restart_possibility
 def _get_font_color(message, user_data):
     font_color = _get_color(message)
     if font_color is None:
@@ -119,6 +140,7 @@ def _get_color(message):
         return None
 
 
+@restart_possibility
 def _get_symbols(message, user_data):
     try:
         symbols = message.text.strip() + ' '
