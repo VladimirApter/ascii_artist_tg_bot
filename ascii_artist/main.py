@@ -24,7 +24,7 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
     if true_color_mode:
         symbols.remove(' ')
 
-    photo_quality = max(150 - result_height, 50)
+    photo_quality = max(200 - result_height, 50)
     video_quality = photo_quality * 0.7
 
     if file_format == 'jpg' or file_format == 'png':

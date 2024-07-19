@@ -6,7 +6,7 @@ from config import bot
 import work_with_db
 
 work_with_db.create_table()
-work_with_db.print_users_table()
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
