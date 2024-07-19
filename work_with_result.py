@@ -4,6 +4,7 @@ import time
 
 from config import bot
 import ascii_artist.main
+import work_with_db
 
 
 def make_result(message, user_data):
@@ -47,6 +48,12 @@ def send_result(message, user_data):
             bot.send_document(message.chat.id, result_file)
 
     os.unlink(result_path)
+
+    user_id = message.from_user.id
+    if file_type == 'photo':
+        work_with_db.update_user_data(user_id, 1, 0, False)
+    if file_type == 'video':
+        work_with_db.update_user_data(user_id, 0, 1, False)
 
     bot.send_message(message.chat.id, "Готово! Можешь присылать следующий файл")
 

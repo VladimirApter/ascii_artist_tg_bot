@@ -3,10 +3,17 @@ import video_processing
 from telebot import types
 
 from config import bot
+import work_with_db
 
+work_with_db.create_table()
+work_with_db.print_users_table()
 
 @bot.message_handler(commands=['start'])
 def start(message):
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
+    work_with_db.register_user(user_id, user_name)
+
     bot.send_message(message.chat.id, "Готов работать, отправь изображение или видео", reply_markup=types.ReplyKeyboardRemove())
 
 

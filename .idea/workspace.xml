@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change font to noto monospaced">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add restart possibility">
+      <change afterPath="$PROJECT_DIR$/work_with_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721043389062</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add restart possibility">
+      <created>1721302762137</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721302762137</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +189,7 @@
     <MESSAGE value="Add validation of user input" />
     <MESSAGE value="Add modes survey, true color mode" />
     <MESSAGE value="Change font to noto monospaced" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change font to noto monospaced" />
+    <MESSAGE value="Add restart possibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add restart possibility" />
   </component>
 </project>
