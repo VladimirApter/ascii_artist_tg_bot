@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add users database and interaction with it">
-      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Improve ascii artist quality">
+      <change afterPath="$PROJECT_DIR$/tutorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/photo_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_data.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/work_with_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721385693163</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Improve ascii artist quality">
+      <created>1721386596578</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1721386596578</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +211,7 @@
     <MESSAGE value="Change font to noto monospaced" />
     <MESSAGE value="Add restart possibility" />
     <MESSAGE value="Add users database and interaction with it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add users database and interaction with it" />
+    <MESSAGE value="Improve ascii artist quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ascii artist quality" />
   </component>
 </project>

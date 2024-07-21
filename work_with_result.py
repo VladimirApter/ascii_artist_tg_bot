@@ -1,10 +1,10 @@
 import os
-from telebot.types import InputMedia
-import time
+from telebot import types
 
 from config import bot
 import ascii_artist.main
 import work_with_db
+import tutorial
 
 
 def make_result(message, user_data):
@@ -19,8 +19,7 @@ def make_result(message, user_data):
         bg_color = user_data['bg_color']
         font_color = user_data['font_color']
 
-
-    bot.send_message(message.chat.id, 'Загружаю твой файл')
+    bot.send_message(message.chat.id, 'Загружаю твой файл', reply_markup=types.ReplyKeyboardRemove())
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     with open(file_path, 'wb') as f:
@@ -49,12 +48,17 @@ def send_result(message, user_data):
 
     os.unlink(result_path)
 
-    user_id = message.from_user.id
-    if file_type == 'photo':
-        work_with_db.update_user_data(user_id, 1, 0, False)
-    if file_type == 'video':
-        work_with_db.update_user_data(user_id, 0, 1, False)
+    if not user_data['first_time']:
+        user_id = message.from_user.id
+        if file_type == 'photo':
+            work_with_db.update_user_data(user_id, 1, 0, False)
+        elif file_type == 'video':
+            work_with_db.update_user_data(user_id, 0, 1, False)
 
-    bot.send_message(message.chat.id, "Готово! Можешь присылать следующий файл")
-
-
+        bot.send_message(message.chat.id, "Готово! Можешь присылать следующий файл", reply_markup=types.ReplyKeyboardRemove())
+    else:
+        bot.send_message(message.chat.id, 'Готово!', reply_markup=types.ReplyKeyboardRemove())
+        if user_data['tutorial_phase'] == 'first':
+            tutorial.start_second_phase(message, user_data)
+        elif user_data['tutorial_phase'] == 'second':
+            tutorial.finish_tutorial(message, user_data)

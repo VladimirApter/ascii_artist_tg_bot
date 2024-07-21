@@ -9,6 +9,7 @@ IMAGES_DIR_PATH = os.path.join(CURRENT_DIR, 'ascii_artist', 'images')
 
 def get_photo(message, user_data):
     from user_survey import start_survey  # to solve circular import problem
+    from tutorial import start_tutorial
 
     file_id = message.photo[-1].file_id
     user_data['file_id'] = file_id
@@ -22,5 +23,10 @@ def get_photo(message, user_data):
     user_data['result_path'] = result_path
 
     bot.reply_to(message, "Принял фото", reply_markup=types.ReplyKeyboardRemove())
-    start_survey(message, user_data)
+
+    user_first_time = user_data['first_time']
+    if not user_first_time:
+        start_survey(message, user_data)
+    else:
+        start_tutorial(message, user_data)
 

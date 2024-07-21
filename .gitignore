@@ -1,3 +1,8 @@
+#local gitignore files
+users_data.sql
+config.py
+
+#Python gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
