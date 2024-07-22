@@ -1,4 +1,3 @@
-import time
 from time import sleep
 import os
 from telebot import types
@@ -7,13 +6,14 @@ from config import bot, CURRENT_DIR
 import work_with_result
 import work_with_db
 import user_survey
+from data_structures import *
 
 TUTORIAL_IMAGES_DIR = os.path.join(CURRENT_DIR, 'turorial_images')
 
 
-def start_tutorial(message, user_data):
-    user_data['tutorial_phase'] = 'first'
-    user_data['mode'] = 'regular'
+def start_tutorial(message, user_data: UserData):
+    user_data.tutorial_phase = TutorialPhase.first
+    user_data.mode = Mode.regular
 
     set_pause_btw_messages(message, 1)
 
@@ -21,7 +21,7 @@ def start_tutorial(message, user_data):
     show_height_example(message, user_data)
 
 
-def show_height_example(message, user_data):
+def show_height_example(message, user_data: UserData):
     set_pause_btw_messages(message, 2)
 
     path_to_original = os.path.join(TUTORIAL_IMAGES_DIR, 'original.jpg')
@@ -47,7 +47,7 @@ def show_height_example(message, user_data):
     bot.register_next_step_handler(message, user_survey.get_height, user_data)
 
 
-def show_bg_color_example(message, user_data):
+def show_bg_color_example(message, user_data: UserData):
     path_to_bg1 = os.path.join(TUTORIAL_IMAGES_DIR, 'bg1.jpg')
     path_to_bg2 = os.path.join(TUTORIAL_IMAGES_DIR, 'bg2.jpg')
 
@@ -68,7 +68,7 @@ def show_bg_color_example(message, user_data):
     bot.register_next_step_handler(message, user_survey.get_bg_color, user_data)
 
 
-def show_symbols_example(message, user_data):
+def show_symbols_example(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Еще можно выбрать символы из которых будет создаваться арт', reply_markup=types.ReplyKeyboardRemove())
 
     set_pause_btw_messages(message, 1)
@@ -91,13 +91,13 @@ def show_symbols_example(message, user_data):
     bot.register_next_step_handler(message, user_survey.get_symbols, user_data)
 
 
-def finish_first_phase(message, user_data):
+def finish_first_phase(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Все, сохранил твои настройки')
     work_with_result.make_result(message, user_data)
 
 
-def start_second_phase(message, user_data):
-    user_data['tutorial_phase'] = 'second'
+def start_second_phase(message, user_data: UserData):
+    user_data.tutorial_phase = TutorialPhase.second
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     true_color_btn = types.KeyboardButton('true color')
@@ -110,12 +110,12 @@ def start_second_phase(message, user_data):
     bot.register_next_step_handler(message, user_survey.get_mode, user_data)
 
 
-def finish_second_phase(message, user_data):
+def finish_second_phase(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Активирован режим true color', reply_markup=types.ReplyKeyboardRemove())
     work_with_result.make_result(message, user_data)
 
 
-def finish_tutorial(message, user_data):
+def finish_tutorial(message, user_data: UserData):
     set_pause_btw_messages(message, 2)
 
     user_id = message.from_user.id
@@ -132,4 +132,4 @@ def finish_tutorial(message, user_data):
 
 def set_pause_btw_messages(message, sleep_time):
     bot.send_chat_action(message.chat.id, 'typing')
-    time.sleep(sleep_time)
+    sleep(sleep_time)

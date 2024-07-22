@@ -4,6 +4,7 @@ from telebot import types
 
 from config import bot
 import work_with_db
+from data_structures import *
 
 work_with_db.create_table()
 
@@ -27,7 +28,7 @@ def photo_handler(message):
     work_with_db.register_user(user_id, user_name)
 
     user_first_time = work_with_db.is_user_first_time(user_id)
-    user_data = {'file_type': 'photo', 'first_time': user_first_time}
+    user_data = UserData(file_type=FileType.photo, first_time=user_first_time)
 
     photo_processing.get_photo(message, user_data)
 
@@ -40,7 +41,7 @@ def video_handler(message):
 
     user_first_time = work_with_db.is_user_first_time(user_id)
     if not user_first_time:
-        user_data = {'file_type': 'video', 'first_time': user_first_time}
+        user_data = UserData(file_type=FileType.video, first_time=user_first_time)
         video_processing.get_video(message, user_data)
     else:
         bot.send_message(message.chat.id, 'Отправь фото пожалуйста')
