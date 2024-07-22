@@ -22,14 +22,14 @@ def start_tutorial(message, user_data):
 
 
 def show_height_example(message, user_data):
-    set_pause_btw_messages(message, 1)
+    set_pause_btw_messages(message, 2)
 
     path_to_original = os.path.join(TUTORIAL_IMAGES_DIR, 'original.jpg')
     with open(path_to_original, 'rb') as file:
         bot.send_photo(message.chat.id, file)
     bot.send_message(message.chat.id, 'Эта картинка будет для примера', reply_markup=types.ReplyKeyboardRemove())
 
-    set_pause_btw_messages(message, 2)
+    set_pause_btw_messages(message, 3)
 
     path_to_height20 = os.path.join(TUTORIAL_IMAGES_DIR, 'height20.jpg')
     path_to_height50 = os.path.join(TUTORIAL_IMAGES_DIR, 'height50.jpg')
@@ -41,7 +41,7 @@ def show_height_example(message, user_data):
 
     bot.send_message(message.chat.id, 'Я обработал картинку по разному: на первой картинке количество символов по вертикали 20, на второй - 50')
 
-    sleep(1)
+    set_pause_btw_messages(message, 3)
 
     bot.send_message(message.chat.id, 'Теперь количество символов по вертикали нужно выбрать тебе. Напиши число и я использую его при обработке твоей картинки')
     bot.register_next_step_handler(message, user_survey.get_height, user_data)
@@ -58,7 +58,7 @@ def show_bg_color_example(message, user_data):
     bot.send_media_group(message.chat.id, photo_group)
     bot.send_message(message.chat.id, 'Тут я поменял цвет фона на красный и синий', reply_markup=types.ReplyKeyboardRemove())
 
-    sleep(1)
+    set_pause_btw_messages(message, 3)
 
     bot.send_message(message.chat.id,
                      'Теперь тебе нужно выбрать цвет фона для твоей '
@@ -71,11 +71,17 @@ def show_bg_color_example(message, user_data):
 def show_symbols_example(message, user_data):
     bot.send_message(message.chat.id, 'Еще можно выбрать символы из которых будет создаваться арт', reply_markup=types.ReplyKeyboardRemove())
 
+    set_pause_btw_messages(message, 1)
+
     path_to_symbols = os.path.join(TUTORIAL_IMAGES_DIR, 'symbols.jpg')
     with open(path_to_symbols, 'rb') as file:
         bot.send_photo(message.chat.id, file)
 
+    set_pause_btw_messages(message, 1)
+
     bot.send_message(message.chat.id, 'Вот например я использовал только символ @')
+
+    set_pause_btw_messages(message, 4)
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     standard_btn = types.KeyboardButton('стандартный набор')
@@ -96,6 +102,9 @@ def start_second_phase(message, user_data):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     true_color_btn = types.KeyboardButton('true color')
     markup.add(true_color_btn)
+
+    set_pause_btw_messages(message, 2)
+
     bot.send_message(message.chat.id, 'Это был обычный режим, еще есть режим true color, нажми на кнопку и я обработаю твою картинку в этом режиме', reply_markup=markup)
 
     bot.register_next_step_handler(message, user_survey.get_mode, user_data)
@@ -107,11 +116,17 @@ def finish_second_phase(message, user_data):
 
 
 def finish_tutorial(message, user_data):
+    set_pause_btw_messages(message, 2)
+
     user_id = message.from_user.id
     work_with_db.update_user_data(user_id, 1, 0, False)
 
     bot.send_message(message.chat.id, 'Еще я умею обрабатывать видео, там все точно также', reply_markup=types.ReplyKeyboardRemove())
+    set_pause_btw_messages(message, 2)
+
     bot.send_message(message.chat.id, 'Все, теперь ты знаешь как делать арты')
+    set_pause_btw_messages(message, 2)
+
     bot.send_message(message.chat.id, 'Можешь присылать изображение или видео')
 
 
