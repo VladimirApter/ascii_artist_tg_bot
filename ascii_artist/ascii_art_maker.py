@@ -1,7 +1,7 @@
 from PIL import Image, ImageFilter, ImageEnhance
 from ascii_artist.ascii_art_draw import create_img_font_drawer, draw_line
 
-ASCII_SYMBOLS, IS_RGB_MODE = [], True
+ASCII_SYMBOLS, IS_RGB_MODE = [], False
 
 
 def _process_image(img, result_size):

@@ -1,20 +1,6 @@
 from enum import Enum
 
 
-class PhotoData:
-    def __init__(self, file_id: int, file_path: str, result_path: str):
-        self.file_id = file_id
-        self.file_path = file_path
-        self.result_path = result_path
-
-
-class VideoData:
-    def __init__(self, file_id: int, file_path: str, result_path: str):
-        self.file_id = file_id
-        self.file_path = file_path
-        self.result_path = result_path
-
-
 class Mode(Enum):
     regular = 0
     true_color = 1
@@ -25,13 +11,38 @@ class TutorialPhase(Enum):
     second = 1
 
 
-class FileType(Enum):
-    photo = 0
-    video = 1
+class Orientation(Enum):
+    horizontal = 0
+    vertical = 1
+
+
+class PhotoData:
+    def __init__(self, file_id: int, file_path: str,
+                 result_path: str, orientation: Orientation):
+        self.file_id = file_id
+        self.file_path = file_path
+        self.result_path = result_path
+        self.orientation = orientation
+
+    @property
+    def max_height(self):
+        return 600 if self.orientation == Orientation.horizontal else 1000
+
+
+class VideoData:
+    def __init__(self, file_id: int, file_path: str,
+                 result_path: str, orientation: Orientation):
+        self.file_id = file_id
+        self.file_path = file_path
+        self.result_path = result_path
+        self.orientation = orientation
+
+    @property
+    def max_height(self):
+        return 120 if self.orientation == Orientation.horizontal else 200
 
 
 class UserData:
-    file_type: FileType
     first_time: bool
     media: PhotoData | VideoData | None
     mode: Mode | None
@@ -41,8 +52,7 @@ class UserData:
     bg_color = None
     font_color = None
 
-    def __init__(self, file_type: FileType, first_time: bool):
-        self.file_type = file_type
+    def __init__(self, first_time: bool):
         self.first_time = first_time
         self.media = None
         self.mode = None
@@ -51,3 +61,11 @@ class UserData:
         self.symbols = None
         self.bg_color = None
         self.font_color = None
+
+    @property
+    def russian_file_type(self):
+        return 'фото' if isinstance(self.media, PhotoData) else 'видео'
+
+    @property
+    def russian_orientation(self):
+        return 'горизонтального' if self.media.orientation == Orientation.horizontal else 'вертикального'

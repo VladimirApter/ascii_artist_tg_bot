@@ -37,12 +37,11 @@ def make_result(message, user_data: UserData):
 def send_result(message, user_data: UserData):
     height = user_data.height
     result_path = user_data.media.result_path
-    file_type = user_data.file_type
 
     with open(result_path, 'rb') as result_file:
-        if file_type == FileType.photo and height <= 60:
+        if isinstance(user_data.media, PhotoData) and height <= 60:
             bot.send_photo(message.chat.id, result_file)
-        elif file_type == FileType.video and height <= 60:
+        elif isinstance(user_data.media, VideoData) and height <= 60:
             bot.send_video(message.chat.id, result_file)
         else:
             bot.send_document(message.chat.id, result_file)
@@ -51,9 +50,9 @@ def send_result(message, user_data: UserData):
 
     if not user_data.first_time:
         user_id = message.from_user.id
-        if file_type == FileType.photo:
+        if isinstance(user_data.media, PhotoData):
             work_with_db.update_user_data(user_id, 1, 0, False)
-        elif file_type == FileType.video:
+        elif isinstance(user_data.media, VideoData):
             work_with_db.update_user_data(user_id, 0, 1, False)
 
         bot.send_message(message.chat.id, "Готово! Можешь присылать следующий файл", reply_markup=types.ReplyKeyboardRemove())

@@ -40,25 +40,24 @@ def start_survey(message, user_data: UserData):
 
 @restart_possibility
 def get_height(message, user_data: UserData):
-    file_type = user_data.file_type
 
     valid = False
     height = 0
+    max_height = user_data.media.max_height
     try:
         height = int(message.text.strip(' ,!.символ(ов/а)symbols'))
     except (ValueError, AttributeError):
         pass
     else:
-        if file_type == FileType.photo and 1 <= height <= 1000:
-            valid = True
-        elif file_type == FileType.video and 1 <= height <= 200:
+        if 1 <= height <= max_height:
             valid = True
 
     if not valid:
-        if file_type == FileType.photo:
-            bot.send_message(message.chat.id, 'Количество символов для фото - число от 1 до 1000, попробуй еще раз')
-        elif file_type == FileType.video:
-            bot.send_message(message.chat.id, 'Количество символов для видео - число от 1 до 200, попробуй еще раз')
+        bot.send_message(message.chat.id, 'Количество символов для '
+                         f'{user_data.russian_orientation} '
+                         f'{user_data.russian_file_type} '
+                         f'- число от 1 до {max_height}, '
+                         f'попробуй еще раз')
         bot.register_next_step_handler(message, get_height, user_data)
         return
 
