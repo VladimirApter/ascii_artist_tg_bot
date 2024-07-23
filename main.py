@@ -12,7 +12,7 @@ work_with_db.create_table()
 @bot.message_handler(commands=['start'])
 def start(message):
     user_id = message.from_user.id
-    user_name = message.from_user.first_name
+    user_name = f'@{message.from_user.username}'
     work_with_db.register_user(user_id, user_name)
 
     if not work_with_db.is_user_first_time(user_id):
@@ -24,7 +24,7 @@ def start(message):
 @bot.message_handler(content_types=['photo'])
 def photo_handler(message):
     user_id = message.from_user.id
-    user_name = message.from_user.first_name
+    user_name = f'@{message.from_user.username}'
     work_with_db.register_user(user_id, user_name)
 
     user_first_time = work_with_db.is_user_first_time(user_id)
@@ -36,7 +36,7 @@ def photo_handler(message):
 @bot.message_handler(content_types=['video'])
 def video_handler(message):
     user_id = message.from_user.id
-    user_name = message.from_user.first_name
+    user_name = f'@{message.from_user.username}'
     work_with_db.register_user(user_id, user_name)
 
     user_first_time = work_with_db.is_user_first_time(user_id)
@@ -46,5 +46,6 @@ def video_handler(message):
     else:
         bot.send_message(message.chat.id, 'Отправь фото пожалуйста')
 
+work_with_db.print_users_table()
 
 bot.polling(none_stop=True)
