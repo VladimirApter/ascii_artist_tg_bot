@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
+from ascii_artist.symbols_packs import SymbolsPacks
 
 ASCII = [
     ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
@@ -10,15 +11,17 @@ ASCII = [
 ]
 
 
-def generate_sorted_ascii_list(symbols=None):
+def generate_sorted_ascii_list(symbols=None, font_path=None):
     if symbols is None or len(symbols) == 0:
         symbols = ASCII
     ASCII_list = "".join(set(symbols))
-    font = ImageFont.truetype(r"C:\Users\admin\Downloads\Noto_Sans_Mono\static\NotoSansMono-Bold.ttf", 36)
+    font = ImageFont.truetype(font_path, 36)
     #font = ImageFont.truetype('arial.ttf', 36)
     images = {}
     for symbol in ASCII_list:
         img_width, img_height = 45, 45
+        if symbols == SymbolsPacks.arabian:
+            img_width, img_height = 100, 100
         img = Image.new('RGB', (img_width, img_height), (255, 255, 255))
 
         drawer = ImageDraw.Draw(img)

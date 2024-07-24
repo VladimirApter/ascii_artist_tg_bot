@@ -1,9 +1,9 @@
 from ascii_artist.sort_ASCII import generate_sorted_ascii_list
 
 
-def make_ASCII_list(bg_color, font_color, symbols=None):
+def make_ASCII_list(bg_color, font_color, symbols=None, font_path=None):
     is_RGB = False
-    ASCII_list = generate_sorted_ascii_list(symbols)
+    ASCII_list = generate_sorted_ascii_list(symbols, font_path)
 
     if not _is_color1_brightness_less_than_color2(bg_color, font_color):
         ASCII_list.reverse()

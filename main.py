@@ -8,7 +8,6 @@ from data_structures import *
 
 work_with_db.create_table()
 
-
 @bot.message_handler(commands=['start'])
 def start(message):
     user_id = message.from_user.id
@@ -46,6 +45,5 @@ def video_handler(message):
     else:
         bot.send_message(message.chat.id, 'Отправь фото пожалуйста')
 
-work_with_db.print_users_table()
 
 bot.polling(none_stop=True)

@@ -1,8 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 
 
-def create_img_font_drawer(original_img_size, font_size, bg_color=(0, 0, 0)):
-    font = ImageFont.truetype(r"C:\Users\admin\Downloads\Noto_Sans_Mono\static\NotoSansMono-Bold.ttf", font_size)
+def create_img_font_drawer(original_img_size, font_size, bg_color=(0, 0, 0), font_path=None):
+    font = ImageFont.truetype(font_path, font_size)
     #font = ImageFont.truetype('arial.ttf', font_size)
 
     img_width = original_img_size[0] * font_size

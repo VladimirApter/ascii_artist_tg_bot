@@ -46,7 +46,7 @@ def _convert_rgb_to_grey(pixel):
     return r * 0.299 + g * 0.587 + b * 0.114
 
 
-def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color, font_color, quality, true_color_mode):
+def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color, font_color, quality, true_color_mode, font_path, font_size):
     global ASCII_SYMBOLS, IS_RGB_MODE
     ASCII_SYMBOLS, IS_RGB_MODE = symbols, is_RGB
 
@@ -57,10 +57,9 @@ def convert_img_to_ascii_art(img_path, result_height, symbols, is_RGB, bg_color,
     result_size = (result_width, result_height)
     img = _process_image(img, result_size)
 
-    font_size = 12
-    if quality >= 90:
-        font_size = 16
-    result_img, font, drawer = create_img_font_drawer(result_size, font_size, bg_color)
+    if quality >= 100:
+        font_size += 2
+    result_img, font, drawer = create_img_font_drawer(result_size, font_size, bg_color, font_path)
 
     for line_number in range(result_height):
         line = _get_pixels_line(img, line_number)
