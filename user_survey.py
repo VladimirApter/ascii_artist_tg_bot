@@ -28,6 +28,7 @@ def restart_possibility(handler):
         elif message.video:
             from video_processing import get_video  # to solve circular import problem
             get_video(message, user_data)
+            return
 
         handler(message, user_data)
 
