@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change user_name in database to tg username from user first name">
-      <change afterPath="$PROJECT_DIR$/ascii_artist/symbols_packs.py" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add few symbols packs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/ascii_art_draw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/ascii_art_maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/ascii_art_maker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/sort_ASCII.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/symbols.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721732103265</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add few symbols packs">
+      <created>1721823748322</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1721823748322</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +261,7 @@
     <MESSAGE value="Remove redundant file type class, add max height restriction depending on orientation" />
     <MESSAGE value="Fix even symbols drawing" />
     <MESSAGE value="Change user_name in database to tg username from user first name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change user_name in database to tg username from user first name" />
+    <MESSAGE value="Add few symbols packs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add few symbols packs" />
   </component>
 </project>

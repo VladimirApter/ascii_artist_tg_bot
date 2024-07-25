@@ -18,8 +18,10 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
     result_path = os.path.join(file_directory_name, f"{file_name}_ascii_art.{file_format}")
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    frames_dir = os.path.join(current_dir, "frames")
-    result_frames_dir = os.path.join(current_dir, "result_frames")
+    frames_dir = os.path.join(current_dir, "frames", file_name)
+    result_frames_dir = os.path.join(current_dir, "result_frames", file_name)
+    os.mkdir(os.path.join(frames_dir))
+    os.mkdir(os.path.join(result_frames_dir))
 
     font_path, font_size = get_font_path_and_size_by_symbols(symbols)
 
@@ -38,6 +40,9 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
                        result_frames_dir, symbols, is_RGB,
                        result_without_audio_path, result_path, bg_color,
                        font_color, video_quality, true_color_mode, font_path, font_size)
+
+    os.rmdir(frames_dir)
+    os.rmdir(result_frames_dir)
 
 
 def _process_image(result_height, file_path, symbols, is_RGB, bg_color, font_color, photo_quality, result_path, true_color_mode, font_path, font_size):

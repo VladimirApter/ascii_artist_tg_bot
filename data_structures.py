@@ -39,7 +39,7 @@ class VideoData:
 
     @property
     def max_height(self):
-        return 120 if self.orientation == Orientation.horizontal else 200
+        return 100 if self.orientation == Orientation.horizontal else 200
 
 
 class UserData:
