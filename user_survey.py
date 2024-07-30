@@ -29,6 +29,20 @@ def restart_possibility(handler):
             from video_processing import get_video  # to solve circular import problem
             get_video(message, user_data)
             return
+        elif message.text is not None:
+            import commands_handle
+            if message.text == '/start':
+                restart_commands.start_handler(message)
+                return
+            elif message.text == '/help':
+                restart_commands.help_handler(message)
+                return
+            elif message.text == '/limits':
+                restart_commands.limits_handler(message)
+                return
+            elif message.text == '/ideas':
+                restart_commands.ideas_handler(message)
+                return
 
         handler(message, user_data)
 

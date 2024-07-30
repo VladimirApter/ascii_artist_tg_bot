@@ -9,7 +9,7 @@ def _process_image(img, result_size):
     img = img.resize(result_size)
 
     enhancer = ImageEnhance.Contrast(img)
-    contrast_enhanced_image = enhancer.enhance(1.5)
+    contrast_enhanced_image = enhancer.enhance(1.75)
 
     return contrast_enhanced_image
 

@@ -8,10 +8,14 @@ from data_structures import *
 VIDEOS_DIR_PATH = os.path.join(CURRENT_DIR, 'ascii_artist', 'videos')
 
 
-def get_video(message, user_data: UserData):
+def get_video(message: types.Message, user_data: UserData):
     from user_survey import start_survey  # to solve circular import problem
 
     video = message.video
+    if video.duration > 15:
+        bot.send_message(message.chat.id, 'Бот может обрабатывать видео длинной до 15 секунд, можешь отправить по частям или выбрать другое видео')
+        return
+
     file_id = video.file_id
 
     file_name = f"user{message.from_user.id}_file{file_id}.mp4"

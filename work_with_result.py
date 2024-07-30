@@ -37,12 +37,15 @@ def make_result(message, user_data: UserData):
 def send_result(message, user_data: UserData):
     height = user_data.height
     result_path = user_data.media.result_path
+    media = user_data.media
 
     with open(result_path, 'rb') as result_file:
-        if isinstance(user_data.media, PhotoData) and height <= 60:
-            bot.send_photo(message.chat.id, result_file)
-        elif isinstance(user_data.media, VideoData) and height <= 60:
-            bot.send_video(message.chat.id, result_file)
+        if (height <= 60 and media.orientation == Orientation.horizontal) or \
+                (height <= 100 and media.orientation == Orientation.vertical):
+            if isinstance(media, PhotoData):
+                bot.send_photo(message.chat.id, result_file)
+            elif isinstance(media, VideoData):
+                bot.send_video(message.chat.id, result_file)
         else:
             bot.send_document(message.chat.id, result_file)
 

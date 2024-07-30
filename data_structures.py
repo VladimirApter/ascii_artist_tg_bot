@@ -17,7 +17,7 @@ class Orientation(Enum):
 
 
 class PhotoData:
-    def __init__(self, file_id: int, file_path: str,
+    def __init__(self, file_id: str, file_path: str,
                  result_path: str, orientation: Orientation):
         self.file_id = file_id
         self.file_path = file_path
@@ -30,7 +30,7 @@ class PhotoData:
 
 
 class VideoData:
-    def __init__(self, file_id: int, file_path: str,
+    def __init__(self, file_id: str, file_path: str,
                  result_path: str, orientation: Orientation):
         self.file_id = file_id
         self.file_path = file_path
