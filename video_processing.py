@@ -12,8 +12,8 @@ def get_video(message: types.Message, user_data: UserData):
     from user_survey import start_survey  # to solve circular import problem
 
     video = message.video
-    if video.duration > 15:
-        bot.send_message(message.chat.id, 'Бот может обрабатывать видео длинной до 15 секунд, можешь отправить по частям или выбрать другое видео')
+    if video.duration > VideoData.max_duration:
+        bot.send_message(message.chat.id, f'Бот может обрабатывать видео длинной до {VideoData.max_duration} секунд, можешь отправить по частям или выбрать другое видео')
         return
 
     file_id = video.file_id

@@ -1,5 +1,6 @@
 import os
 from telebot import types
+from telebot.apihelper import ApiTelegramException
 
 from config import bot
 import ascii_artist.main
@@ -40,14 +41,27 @@ def send_result(message, user_data: UserData):
     media = user_data.media
 
     with open(result_path, 'rb') as result_file:
-        if (height <= 60 and media.orientation == Orientation.horizontal) or \
-                (height <= 100 and media.orientation == Orientation.vertical):
-            if isinstance(media, PhotoData):
-                bot.send_photo(message.chat.id, result_file)
-            elif isinstance(media, VideoData):
-                bot.send_video(message.chat.id, result_file)
-        else:
-            bot.send_document(message.chat.id, result_file)
+        try:
+            if (height <= 60 and media.orientation == Orientation.horizontal) or \
+                    (height <= 100 and media.orientation == Orientation.vertical):
+                if isinstance(media, PhotoData):
+                    bot.send_photo(message.chat.id, result_file)
+                elif isinstance(media, VideoData):
+                    bot.send_video(message.chat.id, result_file)
+            else:
+                bot.send_document(message.chat.id, result_file)
+        except ApiTelegramException as exception:
+            if exception.error_code == 413:
+                bot.send_message(message.chat.id, 'К сожалению результат '
+                                                  'получился слишком большой '
+                                                  'и телеграмм не позволяет '
+                                                  'его отправить, попробуй '
+                                                  'использовать меньше '
+                                                  'символов по вертикали при '
+                                                  'обработке, это поможет '
+                                                  'уменьшить размер арта')
+            else:
+                raise exception
 
     os.unlink(result_path)
 
@@ -58,7 +72,7 @@ def send_result(message, user_data: UserData):
         elif isinstance(user_data.media, VideoData):
             work_with_db.update_user_data(user_id, 0, 1, False)
 
-        bot.send_message(message.chat.id, "Готово! Можешь присылать следующий файл", reply_markup=types.ReplyKeyboardRemove())
+        bot.send_message(message.chat.id, 'Готово! Можешь присылать следующий файл', reply_markup=types.ReplyKeyboardRemove())
     else:
         bot.send_message(message.chat.id, 'Готово!', reply_markup=types.ReplyKeyboardRemove())
         if user_data.tutorial_phase == TutorialPhase.first:

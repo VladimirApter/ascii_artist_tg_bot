@@ -32,16 +32,16 @@ def restart_possibility(handler):
         elif message.text is not None:
             import commands_handle
             if message.text == '/start':
-                restart_commands.start_handler(message)
+                commands_handle.start_handler(message)
                 return
             elif message.text == '/help':
-                restart_commands.help_handler(message)
+                commands_handle.help_handler(message)
                 return
             elif message.text == '/limits':
-                restart_commands.limits_handler(message)
+                commands_handle.limits_handler(message)
                 return
             elif message.text == '/ideas':
-                restart_commands.ideas_handler(message)
+                commands_handle.ideas_handler(message)
                 return
 
         handler(message, user_data)
@@ -56,7 +56,6 @@ def start_survey(message, user_data: UserData):
 
 @restart_possibility
 def get_height(message, user_data: UserData):
-
     valid = False
     height = 0
     max_height = user_data.media.max_height
