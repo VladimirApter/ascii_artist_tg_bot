@@ -1,18 +1,18 @@
-import os
 from telebot.types import InputMediaPhoto, InputMediaVideo
 import work_with_db
 
-from config import bot, CURRENT_DIR
-ads_media_dir = os.path.join(CURRENT_DIR, 'ads_media')
+from config import bot
 
 
 class AdsBearer:
     media_between_ads_count = 2
 
-    def __init__(self, ads_group):
+    def __init__(self, ads_group=None):
         self.ads_group = ads_group
 
     def show_ad(self, message):
+        if self.ads_group is None:
+            return
         user_id = message.from_user.id
         user_media_between_ads_count = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.media_between_ads_count) + 1
         if user_media_between_ads_count < self.media_between_ads_count:
@@ -27,14 +27,15 @@ class AdsBearer:
 
 
 class Ad:
-    def __init__(self, caption: str, images: [str] = None, videos: [str] = None):
+    def __init__(self, caption: str = '', images_paths: [str] = None, videos_paths: [str] = None, url: str = None):
         self.caption = caption
         self.images_paths = []
-        if images is not None:
-            self.images_paths = [os.path.join(ads_media_dir, img) for img in images]
+        if images_paths is not None:
+            self.images_paths = images_paths
         self.videos_paths = []
-        if videos is not None:
-            self.videos_paths = [os.path.join(ads_media_dir, vid) for vid in videos]
+        if videos_paths is not None:
+            self.videos_paths = videos_paths
+        self.url = url
 
     def show(self, message):
         media_group = []

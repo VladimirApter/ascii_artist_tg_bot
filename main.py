@@ -5,6 +5,7 @@ from telebot import types
 from config import bot
 import work_with_db
 import commands_handle
+import ads_config
 from data_structures import *
 
 
@@ -16,11 +17,18 @@ work_with_db.create_table()
 def breakdown_handler(handler):
     def inner(message):
         if bot_is_broken:
-            bot.send_message(message.chat.id, 'Бот временно не работает, попробуй написать позже.')
+            bot.send_message(message.chat.id, 'Бот временно не работает, попробуй написать позже')
         else:
             handler(message)
 
     return inner
+
+
+@bot.message_handler(commands=['admin_command'])
+@breakdown_handler
+def admin_command(message):
+    ads_config.update_ads_group()
+    bot.send_message(message.chat.id, 'ok')
 
 
 @bot.message_handler(commands=['start'])

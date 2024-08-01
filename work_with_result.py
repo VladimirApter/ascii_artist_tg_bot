@@ -75,7 +75,7 @@ def send_result(message, user_data: UserData):
 
         bot.send_message(message.chat.id, 'Готово! Можешь присылать следующий файл', reply_markup=types.ReplyKeyboardRemove())
 
-        ads_config.ads_bearer.show_ad(message)
+        ads_config.ADS_BEARER.show_ad(message)
     else:
         bot.send_message(message.chat.id, 'Готово!', reply_markup=types.ReplyKeyboardRemove())
         if user_data.tutorial_phase == TutorialPhase.first:

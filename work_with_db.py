@@ -25,7 +25,7 @@ def register_user(user_id, user_name):
     user = cursor.fetchone()
     if not user:
         cursor.execute("INSERT INTO users (id, name, photo_count, video_count, first_time, media_between_ads_count, last_showed_ad_index) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                       (user_id, user_name, 0, 0, True, 0, len(ads_config.ads_bearer.ads_group) - 1))
+                       (user_id, user_name, 0, 0, True, 0, len(ads_config.ADS_BEARER.ads_group) - 1))
         conn.commit()
     conn.close()
 
