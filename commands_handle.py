@@ -12,7 +12,8 @@ def start_handler(message):
     user_name = f'@{message.from_user.username}'
     work_with_db.register_user(user_id, user_name)
 
-    if not work_with_db.is_user_first_time(user_id):
+    is_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
+    if not is_first_time:
         bot.send_message(message.chat.id, 'Готов работать, отправь изображение или видео', reply_markup=types.ReplyKeyboardRemove())
     else:
         bot.send_message(message.chat.id, 'Привет! Пришли мне картинку и я сделаю из нее ascii арт')

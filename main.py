@@ -15,7 +15,6 @@ work_with_db.create_table()
 
 def breakdown_handler(handler):
     def inner(message):
-        print(bot_is_broken)
         if bot_is_broken:
             bot.send_message(message.chat.id, 'Бот временно не работает, попробуй написать позже.')
         else:
@@ -53,7 +52,7 @@ def ideas_handler(message):
 def photo_handler(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.is_user_first_time(user_id)
+    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
     user_data = UserData(first_time=user_first_time)
 
     photo_processing.get_photo(message, user_data)
@@ -64,7 +63,7 @@ def photo_handler(message):
 def video_handler(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.is_user_first_time(user_id)
+    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
     if not user_first_time:
         user_data = UserData(first_time=user_first_time)
         video_processing.get_video(message, user_data)
@@ -77,7 +76,7 @@ def video_handler(message):
 def incorrect_input(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.is_user_first_time(user_id)
+    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
     if not user_first_time:
         if message.content_type == 'document':
             bot.send_message(message.chat.id, 'Ты отправил документ, для обработки мне нужно именно фото/видео\nЕсли ты с компьютера поставь галочку "Сжать изображение"')
@@ -90,9 +89,10 @@ def incorrect_input(message):
         bot.send_message(message.chat.id, 'Отправь фото пожалуйста', reply_markup=types.ReplyKeyboardRemove())
 
 
+bot.polling(none_stop=True)
 try:
     bot.polling(none_stop=True)
 except Exception as e:
-    print(e)
+    print('EXCEPTION:', e)
     bot_is_broken = True
     bot.polling(none_stop=True)

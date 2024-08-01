@@ -3,6 +3,7 @@ from telebot import types
 from telebot.apihelper import ApiTelegramException
 
 from config import bot
+import ads_config
 import ascii_artist.main
 import work_with_db
 import tutorial
@@ -68,11 +69,13 @@ def send_result(message, user_data: UserData):
     if not user_data.first_time:
         user_id = message.from_user.id
         if isinstance(user_data.media, PhotoData):
-            work_with_db.update_user_data(user_id, 1, 0, False)
+            work_with_db.update_user_data(user_id, 1, 0)
         elif isinstance(user_data.media, VideoData):
-            work_with_db.update_user_data(user_id, 0, 1, False)
+            work_with_db.update_user_data(user_id, 0, 1)
 
         bot.send_message(message.chat.id, 'Готово! Можешь присылать следующий файл', reply_markup=types.ReplyKeyboardRemove())
+
+        ads_config.ads_bearer.show_ad(message)
     else:
         bot.send_message(message.chat.id, 'Готово!', reply_markup=types.ReplyKeyboardRemove())
         if user_data.tutorial_phase == TutorialPhase.first:

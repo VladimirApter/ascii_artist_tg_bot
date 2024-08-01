@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add bot breakdown treatment, max video duration limit">
+      <change afterPath="$PROJECT_DIR$/ads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ads_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_messages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722332897311</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add bot breakdown treatment, max video duration limit">
+      <created>1722434709659</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1722434709659</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,7 +271,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ascii artist to the project and adjust it" />
     <MESSAGE value="Add simple photo processing" />
     <MESSAGE value="Add simple video processing, fix ascii artist bugs" />
     <MESSAGE value="Split to several files, solve multi user problem" />
@@ -289,6 +295,7 @@
     <MESSAGE value="Fix multiuser video processing bug" />
     <MESSAGE value="Fix video restart possibility bug" />
     <MESSAGE value="Add commands handle, restart by commands possibility, video duration limit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add commands handle, restart by commands possibility, video duration limit" />
+    <MESSAGE value="Add bot breakdown treatment, max video duration limit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add bot breakdown treatment, max video duration limit" />
   </component>
 </project>
