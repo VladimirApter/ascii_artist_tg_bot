@@ -1,7 +1,5 @@
 import sqlite3
 
-import ads_config
-
 
 def create_table():
     conn = sqlite3.connect('users_data.sql')
@@ -56,16 +54,6 @@ def set_user_column_value(user_id, column_name, value):
     cursor = conn.cursor()
     cursor.execute(f"UPDATE users SET {column_name} = ? WHERE id = ?", (value, user_id))
     conn.commit()
-    conn.close()
-
-
-def print_users_table():
-    conn = sqlite3.connect('users_data.sql')
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users")
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
     conn.close()
 
 

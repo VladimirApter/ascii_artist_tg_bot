@@ -5,7 +5,7 @@ from telebot import types
 from config import bot
 import work_with_db
 import commands_handle
-import ads_config
+import admin_commands_handle
 from data_structures import *
 
 
@@ -24,35 +24,8 @@ def breakdown_handler(handler):
     return inner
 
 
-@bot.message_handler(commands=['admin_command'])
-@breakdown_handler
-def admin_command(message):
-    ads_config.update_ads_group()
-    bot.send_message(message.chat.id, 'ads config updated')
-
-
-@bot.message_handler(commands=['start'])
-@breakdown_handler
-def start_handler(message):
-    commands_handle.start_handler(message)
-
-
-@bot.message_handler(commands=['help'])
-@breakdown_handler
-def help_handler(message):
-    commands_handle.help_handler(message)
-
-
-@bot.message_handler(commands=['limits'])
-@breakdown_handler
-def limits_handler(message):
-    commands_handle.limits_handler(message)
-
-
-@bot.message_handler(commands=['ideas'])
-@breakdown_handler
-def ideas_handler(message):
-    commands_handle.ideas_handler(message)
+commands_handle.register_commands()
+admin_commands_handle.register_commands()
 
 
 @bot.message_handler(content_types=['photo'])

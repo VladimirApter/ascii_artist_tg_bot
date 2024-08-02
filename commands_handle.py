@@ -7,6 +7,30 @@ import work_with_db
 from big_messages import *
 
 
+def register_commands():
+    from main import breakdown_handler
+
+    @bot.message_handler(commands=['start'])
+    @breakdown_handler
+    def start_command(message):
+        start_handler(message)
+
+    @bot.message_handler(commands=['help'])
+    @breakdown_handler
+    def help_command(message):
+        help_handler(message)
+
+    @bot.message_handler(commands=['limits'])
+    @breakdown_handler
+    def limits_command(message):
+        limits_handler(message)
+
+    @bot.message_handler(commands=['ideas'])
+    @breakdown_handler
+    def ideas_command(message):
+        ideas_handler(message)
+
+
 def start_handler(message):
     user_id = message.from_user.id
     user_name = f'@{message.from_user.username}'
