@@ -28,7 +28,7 @@ def breakdown_handler(handler):
 @breakdown_handler
 def admin_command(message):
     ads_config.update_ads_group()
-    bot.send_message(message.chat.id, 'ok')
+    bot.send_message(message.chat.id, 'ads config updated')
 
 
 @bot.message_handler(commands=['start'])
