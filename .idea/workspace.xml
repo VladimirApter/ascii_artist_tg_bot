@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add inline button for url and url caption in ads">
-      <change afterPath="$PROJECT_DIR$/admin_commands_handle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_statistic.py" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add admin commands handle, database statistic">
+      <change afterPath="$PROJECT_DIR$/advertiser_commands_handle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_commands_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_with_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722594490140</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add admin commands handle, database statistic">
+      <created>1722620207396</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1722620207396</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,7 +299,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add user data, moved the result making to a separate file" />
     <MESSAGE value="Add height survey, refactor result sending" />
     <MESSAGE value="Add bg and font colors survey, remove rgb split from ascii artist" />
     <MESSAGE value="Add symbols survey, fix font bug" />
@@ -315,6 +323,7 @@
     <MESSAGE value="Add ads showing" />
     <MESSAGE value="Add update ads data by admin_command" />
     <MESSAGE value="Add inline button for url and url caption in ads" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add inline button for url and url caption in ads" />
+    <MESSAGE value="Add admin commands handle, database statistic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add admin commands handle, database statistic" />
   </component>
 </project>

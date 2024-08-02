@@ -23,6 +23,7 @@ def extract_data(folder_path):
     caption = None
     url = None
     url_caption = None
+    id = None
 
     for item in os.listdir(folder_path):
         item_path = os.path.join(folder_path, item)
@@ -44,8 +45,11 @@ def extract_data(folder_path):
                     url = lines[0].strip()
                 if len(lines) > 1:
                     url_caption = lines[1].strip()
+        elif item == 'id.txt':
+            with open(item_path, 'r', encoding='utf-8') as file:
+                id = file.read().strip()
 
-    return images_paths, videos_paths, caption, url, url_caption
+    return images_paths, videos_paths, caption, url, url_caption, id
 
 
 def update_ads_group():
@@ -55,8 +59,8 @@ def update_ads_group():
 
     folders = get_folders_paths(ADS_MEDIA_DIR)
     for folder in folders:
-        images_paths, videos_paths, caption, url, url_caption = extract_data(folder)
-        ad = ads.Ad(caption, images_paths, videos_paths, url, url_caption)
+        images_paths, videos_paths, caption, url, url_caption, id = extract_data(folder)
+        ad = ads.Ad(id, caption, images_paths, videos_paths, url, url_caption)
         ads_group.append(ad)
 
     ADS_BEARER.ads_group = ads_group

@@ -6,10 +6,10 @@ import db_statistic
 def register_commands():
     from main import breakdown_handler
 
-    @bot.message_handler(commands=['admin_command_ads_config_update'])
+    @bot.message_handler(commands=['admin_command_update_ads_config'])
     @breakdown_handler
-    def ads_config_update(message):
-        ads_config_update_handler(message)
+    def update_ads_config(message):
+        update_ads_config_handler(message)
 
     @bot.message_handler(commands=['admin_command_get_users_count'])
     @breakdown_handler
@@ -37,7 +37,7 @@ def register_commands():
         get_user_by_name_handler(message)
 
 
-def ads_config_update_handler(message):
+def update_ads_config_handler(message):
     ads_config.update_ads_group()
     bot.send_message(message.chat.id, 'ads config updated')
 

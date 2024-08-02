@@ -28,7 +28,8 @@ class AdsBearer:
 
 
 class Ad:
-    def __init__(self, caption: str = '', images_paths: [str] = None, videos_paths: [str] = None, url: str = None, url_caption: str = None):
+    def __init__(self, id: str = None, caption: str = '', images_paths: [str] = None, videos_paths: [str] = None, url: str = None, url_caption: str = None):
+        self.id = id
         self.caption = caption
         self.images_paths = []
         if images_paths is not None:

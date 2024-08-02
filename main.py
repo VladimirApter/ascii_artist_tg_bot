@@ -2,10 +2,11 @@ import photo_processing
 import video_processing
 from telebot import types
 
-from config import bot
+from config import bot, owner_chat_id
 import work_with_db
 import commands_handle
 import admin_commands_handle
+import advertiser_commands_handle
 from data_structures import *
 
 
@@ -17,6 +18,7 @@ work_with_db.create_table()
 def breakdown_handler(handler):
     def inner(message):
         if bot_is_broken:
+            bot.send_message(owner_chat_id, 'Бот сломался')
             bot.send_message(message.chat.id, 'Бот временно не работает, попробуй написать позже')
         else:
             handler(message)
@@ -26,6 +28,7 @@ def breakdown_handler(handler):
 
 commands_handle.register_commands()
 admin_commands_handle.register_commands()
+advertiser_commands_handle.register_commands()
 
 
 @bot.message_handler(content_types=['photo'])
