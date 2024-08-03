@@ -3,7 +3,8 @@ from telebot.types import InputMediaPhoto, InputMediaVideo
 import os
 
 from config import bot, CURRENT_DIR
-import work_with_db
+import users_db_work
+import ads_db_work
 from big_messages import *
 
 
@@ -34,9 +35,11 @@ def register_commands():
 def start_handler(message):
     user_id = message.from_user.id
     user_name = f'@{message.from_user.username}'
-    work_with_db.register_user(user_id, user_name)
 
-    is_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
+    users_db_work.register_user(user_id, user_name)
+    ads_db_work.register_user(user_id)
+
+    is_first_time = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.first_time)
     if not is_first_time:
         bot.send_message(message.chat.id, 'Готов работать, отправь изображение или видео', reply_markup=types.ReplyKeyboardRemove())
     else:

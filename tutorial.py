@@ -4,7 +4,7 @@ from telebot import types
 
 from config import bot, CURRENT_DIR
 import work_with_result
-import work_with_db
+import users_db_work
 import user_survey
 from data_structures import *
 
@@ -119,7 +119,7 @@ def finish_tutorial(message, user_data: UserData):
     set_pause_between_messages(message, 2)
 
     user_id = message.from_user.id
-    work_with_db.update_user_data(user_id, 1, 0)
+    users_db_work.update_user_data(user_id, 1, 0)
 
     bot.send_message(message.chat.id, 'Еще я умею обрабатывать видео, там все точно также', reply_markup=types.ReplyKeyboardRemove())
     set_pause_between_messages(message, 2)

@@ -1,7 +1,9 @@
 from telebot import types
 from telebot.types import InputMediaPhoto, InputMediaVideo
-import work_with_db
 
+
+import users_db_work
+import ads_db_work
 from config import bot
 
 
@@ -15,16 +17,16 @@ class AdsBearer:
         if self.ads_group is None:
             return
         user_id = message.from_user.id
-        user_media_between_ads_count = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.media_between_ads_count) + 1
+        user_media_between_ads_count = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.media_between_ads_count) + 1
         if user_media_between_ads_count < self.media_between_ads_count:
-            work_with_db.set_user_column_value(user_id, work_with_db.BdTableColumns.media_between_ads_count, user_media_between_ads_count)
+            users_db_work.set_user_column_value(user_id, users_db_work.BdTableColumns.media_between_ads_count, user_media_between_ads_count)
             return
-        work_with_db.set_user_column_value(user_id, work_with_db.BdTableColumns.media_between_ads_count, 0)
-        last_showed_ad_index = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.last_showed_ad_index)
+        users_db_work.set_user_column_value(user_id, users_db_work.BdTableColumns.media_between_ads_count, 0)
+        last_showed_ad_index = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.last_showed_ad_index)
         ad_index = (last_showed_ad_index + 1) % len(self.ads_group)
         ad = self.ads_group[ad_index]
         ad.show(message)
-        work_with_db.set_user_column_value(user_id, work_with_db.BdTableColumns.last_showed_ad_index, ad_index)
+        users_db_work.set_user_column_value(user_id, users_db_work.BdTableColumns.last_showed_ad_index, ad_index)
 
 
 class Ad:
@@ -68,3 +70,6 @@ class Ad:
 
         for file in open_files:
             file.close()
+
+        user_id = message.from_user.id
+        ads_db_work.increment_user_ad_views(user_id, self.id)

@@ -1,9 +1,10 @@
+import ads_db_work
 import photo_processing
 import video_processing
 from telebot import types
 
 from config import bot, owner_chat_id
-import work_with_db
+import users_db_work
 import commands_handle
 import admin_commands_handle
 import advertiser_commands_handle
@@ -12,7 +13,8 @@ from data_structures import *
 
 bot_is_broken = False
 
-work_with_db.create_table()
+users_db_work.create_table()
+ads_db_work.create_table()
 
 
 def breakdown_handler(handler):
@@ -36,7 +38,7 @@ advertiser_commands_handle.register_commands()
 def photo_handler(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
+    user_first_time = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.first_time)
     user_data = UserData(first_time=user_first_time)
 
     photo_processing.get_photo(message, user_data)
@@ -47,7 +49,7 @@ def photo_handler(message):
 def video_handler(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
+    user_first_time = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.first_time)
     if not user_first_time:
         user_data = UserData(first_time=user_first_time)
         video_processing.get_video(message, user_data)
@@ -60,7 +62,7 @@ def video_handler(message):
 def incorrect_input(message):
     user_id = message.from_user.id
 
-    user_first_time = work_with_db.get_user_column_value(user_id, work_with_db.BdTableColumns.first_time)
+    user_first_time = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.first_time)
     if not user_first_time:
         if message.content_type == 'document':
             bot.send_message(message.chat.id, 'Ты отправил документ, для обработки мне нужно именно фото/видео\nЕсли ты с компьютера поставь галочку "Сжать изображение"')

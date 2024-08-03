@@ -1,6 +1,6 @@
 from config import bot
 import ads_config
-import db_statistic
+import users_db_statistic
 
 
 def register_commands():
@@ -43,27 +43,27 @@ def update_ads_config_handler(message):
 
 
 def get_users_count_handler(message):
-    users_count = db_statistic.get_users_count()
+    users_count = users_db_statistic.get_users_count()
     bot.send_message(message.chat.id, f'users count: {users_count}')
 
 
 def get_top_active_users_handler(message):
-    users_data = db_statistic.get_top_active_users()
+    users_data = users_db_statistic.get_top_active_users()
     text = ''
-    for name, media_count in users_data:
-        text += f'most active user - name: {name}, media count:{media_count}\n'
+    for index, (name, media_count) in enumerate(users_data):
+        text += f'top {index + 1} active user - name: {name}, media count: {media_count}\n'
     if text == '':
         text = 'no data to send'
     bot.send_message(message.chat.id, text)
 
 
 def get_average_counts_handler(message):
-    average_photo_count, average_video_count = db_statistic.get_average_counts()
+    average_photo_count, average_video_count = users_db_statistic.get_average_counts()
     bot.send_message(message.chat.id, f'average photo count: {average_photo_count}\naverage video count: {average_video_count}')
 
 
 def get_first_20_users_handler(message):
-    users_data = db_statistic.get_first_20_users()
+    users_data = users_db_statistic.get_first_20_users()
     text = ''
     for user_data in users_data:
         for item in user_data:
@@ -80,5 +80,5 @@ def get_user_by_name_handler(message):
     except IndexError:
         bot.send_message(message.chat.id, 'table has no user with this username')
         return
-    id, photo_count, video_count = db_statistic.get_user_by_name(user_name)
+    id, photo_count, video_count = users_db_statistic.get_user_by_name(user_name)
     bot.send_message(message.chat.id, f'{user_name} data - id: {id}, photo count: {photo_count}, video count: {video_count}')

@@ -1,9 +1,10 @@
 import os
 
 import ads
+import ads_db_work
 from config import CURRENT_DIR
-ADS_MEDIA_DIR = os.path.join(CURRENT_DIR, 'ads_data')
 
+ADS_MEDIA_DIR = os.path.join(CURRENT_DIR, 'ads_data')
 
 ADS_BEARER = ads.AdsBearer()
 
@@ -65,3 +66,4 @@ def update_ads_group():
 
     ADS_BEARER.ads_group = ads_group
 
+    ads_db_work.update_ads(ADS_BEARER.ads_group)
