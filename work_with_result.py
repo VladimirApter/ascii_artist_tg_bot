@@ -7,6 +7,7 @@ import ads_config
 import ascii_artist.main
 import users_db_work
 import tutorial
+import big_messages
 from data_structures import *
 
 
@@ -29,17 +30,23 @@ def make_result(message, user_data: UserData):
         f.write(downloaded_file)
 
     bot.send_message(message.chat.id, 'Начал обрабатывать')
-    ascii_artist.main.main(file_path, height, bg_color, font_color, symbols, true_color_mode)
 
-    os.unlink(file_path)
-
-    send_result(message, user_data)
+    try:
+        ascii_artist.main.main(file_path, height, bg_color, font_color, symbols, true_color_mode)
+        os.unlink(file_path)
+    except:
+            bot.send_message(message.chat.id, big_messages.big_result_error_message)
+    else:
+        send_result(message, user_data)
 
 
 def send_result(message, user_data: UserData):
     height = user_data.height
     result_path = user_data.media.result_path
     media = user_data.media
+
+    str_file_type = 'photo' if isinstance(user_data.media, PhotoData) else 'video'
+    bot.send_chat_action(message.chat.id, f'upload_{str_file_type}')
 
     with open(result_path, 'rb') as result_file:
         try:
@@ -51,18 +58,8 @@ def send_result(message, user_data: UserData):
                     bot.send_video(message.chat.id, result_file)
             else:
                 bot.send_document(message.chat.id, result_file)
-        except ApiTelegramException as exception:
-            if exception.error_code == 413:
-                bot.send_message(message.chat.id, 'К сожалению результат '
-                                                  'получился слишком большой '
-                                                  'и телеграмм не позволяет '
-                                                  'его отправить, попробуй '
-                                                  'использовать меньше '
-                                                  'символов по вертикали при '
-                                                  'обработке, это поможет '
-                                                  'уменьшить размер арта')
-            else:
-                raise exception
+        except ApiTelegramException:
+            bot.send_message(message.chat.id, big_messages.big_result_error_message)
 
     os.unlink(result_path)
 

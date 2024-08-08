@@ -63,22 +63,23 @@ def incorrect_input(message):
     user_id = message.from_user.id
 
     user_first_time = users_db_work.get_user_column_value(user_id, users_db_work.BdTableColumns.first_time)
-    if not user_first_time:
-        if message.content_type == 'document':
-            bot.send_message(message.chat.id, 'Ты отправил документ, для обработки мне нужно именно фото/видео\nЕсли ты с компьютера поставь галочку "Сжать изображение"')
-            return
-        bot.send_message(message.chat.id, 'Отправь фото или видео, которое хочешь обработать.\nЕсли нужна помощь воспользуйся /help')
+    if message.content_type == 'document':
+        available_media = 'фото' if user_first_time else 'фото/видео'
+        bot.send_message(message.chat.id, f'Ты отправил документ, для обработки мне нужно именно {available_media}\nЕсли ты с компьютера поставь галочку "Сжать изображение"')
     else:
-        if message.content_type == 'document':
-            bot.send_message(message.chat.id, 'Ты отправил документ, для обработки мне нужно именно фото\nЕсли ты с компьютера поставь галочку "Сжать изображение"')
-            return
-        bot.send_message(message.chat.id, 'Отправь фото пожалуйста', reply_markup=types.ReplyKeyboardRemove())
+        message_text = 'Отправь фото пожалуйста' if user_first_time else 'Отправь фото или видео, которое хочешь обработать.\nЕсли нужна помощь воспользуйся /help'
+        bot.send_message(message.chat.id, message_text, reply_markup=types.ReplyKeyboardRemove())
 
 
 bot.polling(none_stop=True)
-try:
-    bot.polling(none_stop=True)
-except Exception as e:
-    print('EXCEPTION:', e)
-    bot_is_broken = True
-    bot.polling(none_stop=True)
+while True:
+    try:
+        bot.polling(none_stop=True)
+    except Exception as e:
+        if bot_is_broken:
+            continue
+        if 'bot was blocked by the user' in str(e):
+            pass
+        else:
+            print('EXCEPTION:', e)
+            bot_is_broken = True

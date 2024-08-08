@@ -35,12 +35,14 @@ def get_id_from_command(message):
 def get_ad_by_id(message, id):
     ads_bearer = ads_config.ADS_BEARER
     if ads_bearer.ads_group is None:
+        bot.send_message(message.chat.id, 'Рекламы с таким id нет')
         return None
     for ad in ads_bearer.ads_group:
         if ad.id == id:
             return ad
-    bot.send_message(message.chat.id, 'Рекламы с соответствующим id нет')
+    bot.send_message(message.chat.id, 'Рекламы с таким id нет')
     return None
+
 
 def get_user_id_by_name_from_command(message):
     try:

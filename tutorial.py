@@ -15,21 +15,21 @@ def start_tutorial(message, user_data: UserData):
     user_data.tutorial_phase = TutorialPhase.first
     user_data.mode = Mode.regular
 
-    set_pause_between_messages(message, 1)
+    set_pause_between_messages(message, 0.25)
 
     bot.send_message(message.chat.id, 'Ты тут первый раз, поэтому я быстренько покажу тебе как делать арты', reply_markup=types.ReplyKeyboardRemove())
     show_height_example(message, user_data)
 
 
 def show_height_example(message, user_data: UserData):
-    set_pause_between_messages(message, 2)
+    set_pause_between_messages(message, 1.5)
 
     path_to_original = os.path.join(TUTORIAL_IMAGES_DIR, 'original.jpg')
     with open(path_to_original, 'rb') as file:
         bot.send_photo(message.chat.id, file)
     bot.send_message(message.chat.id, 'Эта картинка будет для примера', reply_markup=types.ReplyKeyboardRemove())
 
-    set_pause_between_messages(message, 3)
+    set_pause_between_messages(message, 1)
 
     path_to_height20 = os.path.join(TUTORIAL_IMAGES_DIR, 'height20.jpg')
     path_to_height50 = os.path.join(TUTORIAL_IMAGES_DIR, 'height50.jpg')
@@ -41,7 +41,7 @@ def show_height_example(message, user_data: UserData):
 
     bot.send_message(message.chat.id, 'Я обработал картинку по разному: на первой картинке количество символов по вертикали 20, на второй - 50')
 
-    set_pause_between_messages(message, 3)
+    set_pause_between_messages(message, 2.25)
 
     bot.send_message(message.chat.id, 'Теперь количество символов по вертикали нужно выбрать тебе. Напиши число и я использую его при обработке твоей картинки')
     bot.register_next_step_handler(message, user_survey.get_height, user_data)
@@ -58,7 +58,7 @@ def show_bg_color_example(message, user_data: UserData):
     bot.send_media_group(message.chat.id, photo_group)
     bot.send_message(message.chat.id, 'Тут я поменял цвет фона на красный и синий', reply_markup=types.ReplyKeyboardRemove())
 
-    set_pause_between_messages(message, 3)
+    set_pause_between_messages(message, 1)
 
     bot.send_message(message.chat.id,
                      'Теперь тебе нужно выбрать цвет фона для твоей '
@@ -71,17 +71,15 @@ def show_bg_color_example(message, user_data: UserData):
 def show_symbols_example(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Еще можно выбрать символы из которых будет создаваться арт', reply_markup=types.ReplyKeyboardRemove())
 
-    set_pause_between_messages(message, 1)
+    set_pause_between_messages(message, 1.25)
 
     path_to_symbols = os.path.join(TUTORIAL_IMAGES_DIR, 'symbols.jpg')
     with open(path_to_symbols, 'rb') as file:
         bot.send_photo(message.chat.id, file)
 
-    set_pause_between_messages(message, 1)
-
     bot.send_message(message.chat.id, 'Вот например я использовал только символ @')
 
-    set_pause_between_messages(message, 4)
+    set_pause_between_messages(message, 1.75)
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     standard_btn = types.KeyboardButton('стандартный набор')
@@ -99,11 +97,11 @@ def finish_first_phase(message, user_data: UserData):
 def start_second_phase(message, user_data: UserData):
     user_data.tutorial_phase = TutorialPhase.second
 
+    set_pause_between_messages(message, 2.25)
+
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     true_color_btn = types.KeyboardButton('true color')
     markup.add(true_color_btn)
-
-    set_pause_between_messages(message, 2)
 
     bot.send_message(message.chat.id, 'Это был обычный режим, еще есть режим true color, нажми на кнопку и я обработаю твою картинку в этом режиме', reply_markup=markup)
 
@@ -122,10 +120,10 @@ def finish_tutorial(message, user_data: UserData):
     users_db_work.update_user_data(user_id, 1, 0)
 
     bot.send_message(message.chat.id, 'Еще я умею обрабатывать видео, там все точно также', reply_markup=types.ReplyKeyboardRemove())
-    set_pause_between_messages(message, 2)
+    set_pause_between_messages(message, 0.5)
 
     bot.send_message(message.chat.id, 'Все, теперь ты знаешь как делать арты')
-    set_pause_between_messages(message, 2)
+    set_pause_between_messages(message, 0.5)
 
     bot.send_message(message.chat.id, 'Можешь присылать изображение или видео')
 

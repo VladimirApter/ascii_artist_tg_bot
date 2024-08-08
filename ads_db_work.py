@@ -23,8 +23,11 @@ def register_user(user_id):
         columns = cursor.fetchall()
         column_names = [column[1] for column in columns if column[1] != 'id']
 
-        placeholders = ', '.join(['0'] * len(column_names))
-        cursor.execute(f"INSERT INTO ads (id, {', '.join(column_names)}) VALUES (?, {placeholders})", (user_id,))
+        if column_names:
+            placeholders = ', '.join(['0'] * len(column_names))
+            cursor.execute(f"INSERT INTO ads (id, {', '.join(column_names)}) VALUES (?, {placeholders})", (user_id,))
+        else:
+            cursor.execute("INSERT INTO ads (id) VALUES (?)", (user_id,))
 
     conn.commit()
     conn.close()

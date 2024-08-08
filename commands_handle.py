@@ -57,9 +57,7 @@ def limits_handler(message):
 def ideas_handler(message):
     files_dir = os.path.join(CURRENT_DIR, 'idea_files')
 
-    images_names = ['anonymous', 'messi', 'earth', 'flower',
-                    'trump', 'dunk', 'led', 'taj_mahal']
-    videos_names = ['basket', 'weightlifting']
+    images_names = ['trump', 'earth', 'flower', 'messi', 'dunk', 'led']
 
     media_group = []
     open_files = []
@@ -68,12 +66,8 @@ def ideas_handler(message):
         photo = open(photo_path, 'rb')
         open_files.append(photo)
         media_group.append(InputMediaPhoto(media=photo))
-    for video_name in videos_names:
-        video_path = os.path.join(files_dir, f'{video_name}.mp4')
-        video = open(video_path, 'rb')
-        open_files.append(video)
-        media_group.append(InputMediaVideo(media=video))
 
+    bot.send_chat_action(message.chat.id, 'upload_photo')
     bot.send_media_group(message.chat.id, media_group, timeout=50)
     bot.send_message(message.chat.id, 'Я готов работать, можешь отправить изображение или видео', reply_markup=types.ReplyKeyboardRemove())
 
