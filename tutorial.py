@@ -61,9 +61,8 @@ def show_bg_color_example(message, user_data: UserData):
     set_pause_between_messages(message, 1)
 
     bot.send_message(message.chat.id,
-                     'Теперь тебе нужно выбрать цвет фона для твоей '
-                     'картинки. Выбери цвет нажав кнопку внизу или напиши '
-                     'свой в формате rgb (например: 200 150 255)',
+                     'Выбери цвет фона для твоей картинки нажав кнопку внизу '
+                     'или напиши свой в формате rgb (например: 200 150 255)',
                      reply_markup=user_survey.colors_buttons_markup)
     bot.register_next_step_handler(message, user_survey.get_bg_color, user_data)
 
@@ -90,7 +89,7 @@ def show_symbols_example(message, user_data: UserData):
 
 
 def finish_first_phase(message, user_data: UserData):
-    bot.send_message(message.chat.id, 'Все, сохранил твои настройки')
+    bot.send_message(message.chat.id, 'Окей, сохранил твои настройки')
     work_with_result.make_result(message, user_data)
 
 
@@ -122,10 +121,7 @@ def finish_tutorial(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Еще я умею обрабатывать видео, там все точно также', reply_markup=types.ReplyKeyboardRemove())
     set_pause_between_messages(message, 0.5)
 
-    bot.send_message(message.chat.id, 'Все, теперь ты знаешь как делать арты')
-    set_pause_between_messages(message, 0.5)
-
-    bot.send_message(message.chat.id, 'Можешь присылать изображение или видео')
+    bot.send_message(message.chat.id, 'Все, теперь ты знаешь как делать арты, можешь присылать изображение или видео')
 
 
 def set_pause_between_messages(message, sleep_time):

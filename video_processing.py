@@ -13,7 +13,7 @@ def get_video(message: types.Message, user_data: UserData):
 
     video = message.video
     if video.duration > VideoData.max_duration:
-        bot.send_message(message.chat.id, f'Бот может обрабатывать видео длинной до {VideoData.max_duration} секунд, можешь отправить по частям или выбрать другое видео')
+        bot.send_message(message.chat.id, f'Бот может обрабатывать видео длинной до {VideoData.max_duration} секунд, можешь обработать по частям или выбрать другое видео')
         return
 
     file_id = video.file_id

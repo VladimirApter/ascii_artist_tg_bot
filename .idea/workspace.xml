@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add ads database, ads statistic, statistic commands for advertiser">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Little improvements, adjust tutorial timing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads_db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_db_work.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advertiser_commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/advertiser_commands_handle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722710931572</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Little improvements, adjust tutorial timing">
+      <created>1723117951999</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1723117951999</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,7 +317,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add symbols survey, fix font bug" />
     <MESSAGE value="Add colors survey buttons" />
     <MESSAGE value="Add validation of user input" />
     <MESSAGE value="Add modes survey, true color mode" />
@@ -339,6 +341,7 @@
     <MESSAGE value="Add admin commands handle, database statistic" />
     <MESSAGE value="Add show ad for advertiser possibility, add send breakdown message to owner" />
     <MESSAGE value="Add ads database, ads statistic, statistic commands for advertiser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ads database, ads statistic, statistic commands for advertiser" />
+    <MESSAGE value="Little improvements, adjust tutorial timing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little improvements, adjust tutorial timing" />
   </component>
 </project>

@@ -50,8 +50,43 @@ def restart_possibility(handler):
 
 
 def start_survey(message, user_data: UserData):
-    bot.send_message(message.chat.id, 'Теперь напиши сколько символов хочешь по вертикали')
-    bot.register_next_step_handler(message, get_height, user_data)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    regular_btn = types.KeyboardButton('обычный')
+    true_color_btn = types.KeyboardButton('true color')
+    markup.row(regular_btn, true_color_btn)
+    bot.send_message(message.chat.id, 'Выбери режим обработки', reply_markup=markup)
+    bot.register_next_step_handler(message, get_mode, user_data)
+
+
+def get_symbols_markup(user_data: UserData):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+    standard_btn = types.KeyboardButton('стандартный набор')
+    markup.add(standard_btn)
+
+    others_btn = types.KeyboardButton('посмотреть все наборы')
+    markup.add(others_btn)
+
+    return markup
+
+
+@restart_possibility
+def get_mode(message, user_data: UserData):
+    if message.text == 'обычный':
+        user_data.mode = Mode.regular
+        bot.send_message(message.chat.id, 'Сколько символов хочешь по вертикали?', reply_markup=types.ReplyKeyboardRemove())
+        bot.register_next_step_handler(message, get_height, user_data)
+    elif message.text == 'true color':
+        user_data.mode = Mode.true_color
+
+        if not user_data.first_time:
+            bot.send_message(message.chat.id, 'Сколько символов хочешь по вертикали?', reply_markup=types.ReplyKeyboardRemove())
+            bot.register_next_step_handler(message, get_height, user_data)
+        else:
+            tutorial.finish_second_phase(message, user_data)
+    else:
+        bot.send_message(message.chat.id, 'Чтобы выбрать режим нажми на одну из кнопок ниже')
+        bot.register_next_step_handler(message, get_mode, user_data)
 
 
 @restart_possibility
@@ -78,49 +113,18 @@ def get_height(message, user_data: UserData):
 
     user_data.height = height
 
-    if not user_data.first_time:
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        regular_btn = types.KeyboardButton('обычный')
-        true_color_btn = types.KeyboardButton('true color')
-        markup.row(regular_btn, true_color_btn)
-        bot.send_message(message.chat.id, 'Теперь нужно выбрать режим обработки', reply_markup=markup)
-        bot.register_next_step_handler(message, get_mode, user_data)
-    else:
+    if user_data.first_time:
         tutorial.show_bg_color_example(message, user_data)
+        return
 
-
-def get_symbols_markup(user_data: UserData):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-
-    standard_btn = types.KeyboardButton('стандартный набор')
-    markup.add(standard_btn)
-
-    others_btn = types.KeyboardButton('посмотреть все наборы')
-    markup.add(others_btn)
-
-    return markup
-
-
-@restart_possibility
-def get_mode(message, user_data: UserData):
-    if message.text == 'обычный':
-        user_data.mode = Mode.regular
-
+    if user_data.mode == Mode.regular:
         bot.send_message(message.chat.id, 'Выбери цвет фона или напиши свой в формате rgb (например: 200 150 255)', reply_markup=colors_buttons_markup)
         bot.register_next_step_handler(message, get_bg_color, user_data)
-    elif message.text == 'true color':
-        user_data.mode = Mode.true_color
+    elif user_data.mode == Mode.true_color:
+        markup = get_symbols_markup(user_data)
 
-        if not user_data.first_time:
-            markup = get_symbols_markup(user_data)
-
-            bot.send_message(message.chat.id, 'Можешь написать символы из которых будет создаваться арт или использовать готовый набор', reply_markup=markup)
-            bot.register_next_step_handler(message, get_symbols, user_data)
-        else:
-            tutorial.finish_second_phase(message, user_data)
-    else:
-        bot.send_message(message.chat.id, 'Чтобы выбрать режим нажми на одну из кнопок ниже')
-        bot.register_next_step_handler(message, get_mode, user_data)
+        bot.send_message(message.chat.id, 'Можешь написать символы из которых будет создаваться арт или использовать готовый набор', reply_markup=markup)
+        bot.register_next_step_handler(message, get_symbols, user_data)
 
 
 @restart_possibility
