@@ -1,8 +1,9 @@
 import sqlite3
+import config
 
 
 def get_total_ad_views(ad_id):
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     column_name = f'ad_{ad_id}'
@@ -14,7 +15,7 @@ def get_total_ad_views(ad_id):
 
 
 def get_user_ad_views(user_id, ad_id):
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     column_name = f'ad_{ad_id}'
@@ -26,7 +27,7 @@ def get_user_ad_views(user_id, ad_id):
 
 
 def get_average_ad_views(ad_id):
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     column_name = f'ad_{ad_id}'

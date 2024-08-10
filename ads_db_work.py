@@ -1,8 +1,9 @@
 import sqlite3
+import config
 
 
 def create_table():
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS ads (
@@ -14,7 +15,7 @@ def create_table():
 
 
 def register_user(user_id):
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     cursor.execute("SELECT id FROM ads WHERE id = ?", (user_id,))
@@ -36,7 +37,7 @@ def register_user(user_id):
 def update_ads(ads):
     unique_ads = {ad.id: ad for ad in ads}.values()
 
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     cursor.execute(f"PRAGMA table_info(ads);")
@@ -54,7 +55,7 @@ def update_ads(ads):
 
 
 def increment_user_ad_views(user_id, ad_id):
-    conn = sqlite3.connect('data/ads_db.sql')
+    conn = sqlite3.connect(config.ads_db_path)
     cursor = conn.cursor()
 
     column_name = f'ad_{ad_id}'

@@ -1,8 +1,9 @@
 import sqlite3
+import config
 
 
 def create_table():
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS users (
                         id INTEGER PRIMARY KEY,
@@ -17,7 +18,7 @@ def create_table():
 
 
 def register_user(user_id, user_name):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
     user = cursor.fetchone()
@@ -29,7 +30,7 @@ def register_user(user_id, user_name):
 
 
 def update_user_data(user_id, photo_count=0, video_count=0):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("UPDATE users SET photo_count = photo_count + ?, video_count = video_count + ?, first_time = ? WHERE id = ?",
                    (photo_count, video_count, False, user_id))
@@ -38,7 +39,7 @@ def update_user_data(user_id, photo_count=0, video_count=0):
 
 
 def get_user_column_value(user_id, column_name):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute(f"SELECT {column_name} FROM users WHERE id = ?", (user_id,))
     result = cursor.fetchone()
@@ -50,7 +51,7 @@ def get_user_column_value(user_id, column_name):
 
 
 def set_user_column_value(user_id, column_name, value):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute(f"UPDATE users SET {column_name} = ? WHERE id = ?", (value, user_id))
     conn.commit()
@@ -58,7 +59,7 @@ def set_user_column_value(user_id, column_name, value):
 
 
 def get_user_id_by_name(user_name):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute(f"SELECT id FROM users WHERE name = ?", (user_name,))
     result = cursor.fetchone()

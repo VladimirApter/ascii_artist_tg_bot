@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Make secrets invisible, remove config file from gitignore">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add empty db files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_work.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723308935368</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add empty db files">
+      <created>1723312246234</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1723312246234</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +399,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove redundant file type class, add max height restriction depending on orientation" />
     <MESSAGE value="Fix even symbols drawing" />
     <MESSAGE value="Change user_name in database to tg username from user first name" />
     <MESSAGE value="Add few symbols packs" />
@@ -414,6 +423,7 @@
     <MESSAGE value="Add amvera configuration file" />
     <MESSAGE value="Remove incorrect amvera configuration file" />
     <MESSAGE value="Make secrets invisible, remove config file from gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make secrets invisible, remove config file from gitignore" />
+    <MESSAGE value="Add empty db files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add empty db files" />
   </component>
 </project>

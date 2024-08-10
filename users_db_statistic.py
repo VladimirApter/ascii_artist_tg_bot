@@ -1,8 +1,9 @@
 import sqlite3
+import config
 
 
 def get_users_count():
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM users")
     count = cursor.fetchone()[0]
@@ -11,7 +12,7 @@ def get_users_count():
 
 
 def get_top_active_users():
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT name, photo_count + video_count AS total_count FROM users ORDER BY total_count DESC LIMIT 5")
     results = cursor.fetchall()
@@ -20,7 +21,7 @@ def get_top_active_users():
 
 
 def get_average_counts():
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT AVG(photo_count), AVG(video_count) FROM users")
     result = cursor.fetchone()
@@ -32,7 +33,7 @@ def get_average_counts():
 
 
 def get_first_20_users():
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users LIMIT 20")
     results = cursor.fetchall()
@@ -41,7 +42,7 @@ def get_first_20_users():
 
 
 def get_user_by_name(name):
-    conn = sqlite3.connect('data/users_db.sql')
+    conn = sqlite3.connect(config.users_db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT id, photo_count, video_count FROM users WHERE name = ?", (name,))
     result = cursor.fetchone()
