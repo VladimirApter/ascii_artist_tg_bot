@@ -1,6 +1,6 @@
 #local gitignore files
-users_db.sql
-ads_db.sql
+data/users_db.sql
+data/ads_db.sql
 config.py
 
 #Python gitignore

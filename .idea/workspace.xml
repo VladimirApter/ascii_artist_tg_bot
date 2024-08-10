@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change requirements" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Final fix requirements">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_db_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_db_work.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_work.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -331,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723299204726</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Final fix requirements">
+      <created>1723302145622</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1723302145622</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,7 +360,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add users database and interaction with it" />
     <MESSAGE value="Improve ascii artist quality" />
     <MESSAGE value="Add tutorial" />
     <MESSAGE value="Adjust tutorial messages timing" />
@@ -371,6 +384,7 @@
     <MESSAGE value="Final version" />
     <MESSAGE value="Add requirements" />
     <MESSAGE value="Change requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change requirements" />
+    <MESSAGE value="Final fix requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final fix requirements" />
   </component>
 </project>
