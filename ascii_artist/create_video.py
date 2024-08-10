@@ -12,7 +12,6 @@ def create_and_save_video(frames_dir, result_path, prefix, img_format, fps=30):
     frames = []
     for i in range(len(images)):
         symbol = load_symbols[(i // 10) % len(load_symbols)]
-        print(f'\rСохранение видео... {Fore.GREEN}{symbol}{Style.RESET_ALL}', end='')
 
         frames.append(cv2.imread(os.path.join(frames_dir, images[i])))
 
@@ -20,7 +19,6 @@ def create_and_save_video(frames_dir, result_path, prefix, img_format, fps=30):
     max_height = 0
     for i in range(len(frames)):
         symbol = load_symbols[(i // 10) % len(load_symbols)]
-        print(f'\rСохранение видео... {Fore.GREEN}{symbol}{Style.RESET_ALL}', end='')
 
         height, width, _ = frames[i].shape
         if width > max_width:
@@ -32,7 +30,6 @@ def create_and_save_video(frames_dir, result_path, prefix, img_format, fps=30):
 
     for i in range(len(frames)):
         symbol = load_symbols[(i // 10) % len(load_symbols)]
-        print(f'\rСохранение видео... {Fore.GREEN}{symbol}{Style.RESET_ALL}', end='')
 
         video.write(cv2.resize(frames[i], (max_width, max_height)))
 

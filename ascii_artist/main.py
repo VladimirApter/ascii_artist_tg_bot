@@ -46,7 +46,6 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
 
 
 def _process_image(result_height, file_path, symbols, is_RGB, bg_color, font_color, photo_quality, result_path, true_color_mode, font_path, font_size):
-    print("Обработка картирнки началась")
     result_img = convert_img_to_ascii_art(file_path, result_height, symbols, is_RGB, bg_color, font_color, photo_quality, true_color_mode, font_path, font_size)
     result_img.save(result_path, optimize=True, quality=photo_quality)
 
@@ -55,7 +54,6 @@ def _process_video(result_height, file_path, resized_file_path, frames_dir,
                    result_frames_dir, symbols, is_RGB,
                    result_without_audio_path, result_path, bg_color,
                    font_color, video_quality, true_color_mode, font_path, font_size):
-    print(f"Обработка видео началась")
 
     font_size = min(int(font_size * 0.6), 12)
     video = VideoFileClip(file_path, verbose=False)

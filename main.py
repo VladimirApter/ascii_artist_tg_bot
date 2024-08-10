@@ -71,7 +71,6 @@ def incorrect_input(message):
         bot.send_message(message.chat.id, message_text, reply_markup=types.ReplyKeyboardRemove())
 
 
-bot.polling(none_stop=True)
 while True:
     try:
         bot.polling(none_stop=True)

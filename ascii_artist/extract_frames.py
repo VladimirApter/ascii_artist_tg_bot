@@ -15,7 +15,6 @@ def extract_frames_from_video(video_path, output_folder, prefix='frame', format=
     index = 0
     while success:
         symbol = load_symbols[(index // 2) % len(load_symbols)]
-        print(f'\rЗагрузка видео... {Fore.GREEN}{symbol}{Style.RESET_ALL}', end='')
 
         success, frame = video.read()
         if success:

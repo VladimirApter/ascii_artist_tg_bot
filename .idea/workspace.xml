@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Edit text messages" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Relocate ads data examples">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/create_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/create_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/extract_frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/extract_frames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723230386316</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Relocate ads data examples">
+      <created>1723230524993</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1723230524993</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,7 +331,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add validation of user input" />
     <MESSAGE value="Add modes survey, true color mode" />
     <MESSAGE value="Change font to noto monospaced" />
     <MESSAGE value="Add restart possibility" />
@@ -343,6 +355,7 @@
     <MESSAGE value="Add ads database, ads statistic, statistic commands for advertiser" />
     <MESSAGE value="Little improvements, adjust tutorial timing" />
     <MESSAGE value="Edit text messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit text messages" />
+    <MESSAGE value="Relocate ads data examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="Relocate ads data examples" />
   </component>
 </project>
