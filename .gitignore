@@ -1,7 +1,6 @@
 #local gitignore files
 data/users_db.sql
 data/ads_db.sql
-config.py
 
 #Python gitignore
 # Byte-compiled / optimized / DLL files
