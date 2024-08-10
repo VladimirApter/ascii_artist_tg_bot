@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add amvera configuration file" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Remove incorrect amvera configuration file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723306743300</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Remove incorrect amvera configuration file">
+      <created>1723307054853</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1723307054853</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,7 +375,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adjust tutorial messages timing" />
     <MESSAGE value="Add user data and media data structures" />
     <MESSAGE value="Remove redundant file type class, add max height restriction depending on orientation" />
     <MESSAGE value="Fix even symbols drawing" />
@@ -393,6 +399,7 @@
     <MESSAGE value="Final fix requirements" />
     <MESSAGE value="Relocate dbs to data folder" />
     <MESSAGE value="Add amvera configuration file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add amvera configuration file" />
+    <MESSAGE value="Remove incorrect amvera configuration file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove incorrect amvera configuration file" />
   </component>
 </project>
