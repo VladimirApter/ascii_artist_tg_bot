@@ -1,6 +1,5 @@
 import cv2
 import os
-from colorama import Fore, Style
 
 
 def create_and_save_video(frames_dir, result_path, prefix, img_format, fps=30):
