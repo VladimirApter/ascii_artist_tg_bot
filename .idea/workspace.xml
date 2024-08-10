@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Final fix requirements">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Relocate dbs to data folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_db_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_db_work.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_work.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +41,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Projects\ascii_artist_tg_bot\data" />
       <recent name="C:\Users\admin\Projects\ascii_artist_tg_bot" />
     </key>
   </component>
@@ -345,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723302145622</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Relocate dbs to data folder">
+      <created>1723305673431</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1723305673431</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,7 +363,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve ascii artist quality" />
     <MESSAGE value="Add tutorial" />
     <MESSAGE value="Adjust tutorial messages timing" />
     <MESSAGE value="Add user data and media data structures" />
@@ -385,6 +387,7 @@
     <MESSAGE value="Add requirements" />
     <MESSAGE value="Change requirements" />
     <MESSAGE value="Final fix requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final fix requirements" />
+    <MESSAGE value="Relocate dbs to data folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Relocate dbs to data folder" />
   </component>
 </project>
