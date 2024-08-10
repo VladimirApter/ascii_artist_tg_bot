@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Test mode for amvera">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Remove redundant imports, change requirements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ascii_artist/create_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/create_video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ascii_artist/extract_frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/extract_frames.py" afterDir="false" />
@@ -60,13 +60,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Add main.py">
-      <created>1720177668120</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1720177668120</updated>
     </task>
     <task id="LOCAL-00002" summary="Add simple processing">
       <created>1720180056202</created>
@@ -404,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723315257444</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Remove redundant imports, change requirements">
+      <created>1723316074122</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1723316074138</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,7 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix multiuser video processing bug" />
     <MESSAGE value="Fix video restart possibility bug" />
     <MESSAGE value="Add commands handle, restart by commands possibility, video duration limit" />
     <MESSAGE value="Add bot breakdown treatment, max video duration limit" />
@@ -444,6 +443,7 @@
     <MESSAGE value="Fix paths to db files" />
     <MESSAGE value="Send exception text to owner tg" />
     <MESSAGE value="Test mode for amvera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test mode for amvera" />
+    <MESSAGE value="Remove redundant imports, change requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove redundant imports, change requirements" />
   </component>
 </project>

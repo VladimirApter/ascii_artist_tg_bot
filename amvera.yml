@@ -6,7 +6,11 @@ meta:
     version: 3.11
 build:
   requirementsPath: requirements.txt
+  preBuildCommands:
+    - apt-get update
+    - apt-get install -y libgl1-mesa-glx
 run:
   scriptName: main.py
   persistenceMount: /data
   containerPort: 80
+

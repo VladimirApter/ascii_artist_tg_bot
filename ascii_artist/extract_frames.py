@@ -9,12 +9,9 @@ def extract_frames_from_video(video_path, output_folder, prefix='frame', format=
     video = cv2.VideoCapture(video_path)
     fps = video.get(cv2.CAP_PROP_FPS)
 
-    load_symbols = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
     success = True
     index = 0
     while success:
-        symbol = load_symbols[(index // 2) % len(load_symbols)]
-
         success, frame = video.read()
         if success:
             file_name = f"{prefix}_{index}.{format}"
