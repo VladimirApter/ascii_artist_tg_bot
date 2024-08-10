@@ -80,5 +80,5 @@ while True:
         if 'bot was blocked by the user' in str(e):
             pass
         else:
-            print('EXCEPTION:', e)
+            bot.send_message(owner_chat_id, f'EXCEPTION: {str(e)}')
             bot_is_broken = True

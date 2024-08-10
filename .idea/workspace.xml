@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add empty db files">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Fix paths to db files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_db_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_db_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_db_work.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -384,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723312246234</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Fix paths to db files">
+      <created>1723313280371</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1723313280371</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +403,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix even symbols drawing" />
     <MESSAGE value="Change user_name in database to tg username from user first name" />
     <MESSAGE value="Add few symbols packs" />
     <MESSAGE value="Fix multiuser video processing bug" />
@@ -424,6 +427,7 @@
     <MESSAGE value="Remove incorrect amvera configuration file" />
     <MESSAGE value="Make secrets invisible, remove config file from gitignore" />
     <MESSAGE value="Add empty db files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add empty db files" />
+    <MESSAGE value="Fix paths to db files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix paths to db files" />
   </component>
 </project>
