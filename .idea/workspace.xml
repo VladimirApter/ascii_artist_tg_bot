@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Fix paths to db files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Send exception text to owner tg" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -388,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723313280371</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Send exception text to owner tg">
+      <created>1723314368273</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1723314368273</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change user_name in database to tg username from user first name" />
     <MESSAGE value="Add few symbols packs" />
     <MESSAGE value="Fix multiuser video processing bug" />
     <MESSAGE value="Fix video restart possibility bug" />
@@ -428,6 +432,7 @@
     <MESSAGE value="Make secrets invisible, remove config file from gitignore" />
     <MESSAGE value="Add empty db files" />
     <MESSAGE value="Fix paths to db files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix paths to db files" />
+    <MESSAGE value="Send exception text to owner tg" />
+    <option name="LAST_COMMIT_MESSAGE" value="Send exception text to owner tg" />
   </component>
 </project>

@@ -71,7 +71,8 @@ def incorrect_input(message):
         bot.send_message(message.chat.id, message_text, reply_markup=types.ReplyKeyboardRemove())
 
 
-while True:
+bot.polling(none_stop=True)
+'''while True:
     try:
         bot.polling(none_stop=True)
     except Exception as e:
@@ -81,4 +82,4 @@ while True:
             pass
         else:
             bot.send_message(owner_chat_id, f'EXCEPTION: {str(e)}')
-            bot_is_broken = True
+            bot_is_broken = True'''
