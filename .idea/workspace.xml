@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add requirements">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change requirements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -326,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723294743759</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Change requirements">
+      <created>1723299204726</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1723299204726</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,7 +346,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add restart possibility" />
     <MESSAGE value="Add users database and interaction with it" />
     <MESSAGE value="Improve ascii artist quality" />
     <MESSAGE value="Add tutorial" />
@@ -366,6 +370,7 @@
     <MESSAGE value="Relocate ads data examples" />
     <MESSAGE value="Final version" />
     <MESSAGE value="Add requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add requirements" />
+    <MESSAGE value="Change requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change requirements" />
   </component>
 </project>
