@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Remove incorrect amvera configuration file">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Make secrets invisible, remove config file from gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -364,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723307054853</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Make secrets invisible, remove config file from gitignore">
+      <created>1723308935368</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1723308935368</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,7 +390,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add user data and media data structures" />
     <MESSAGE value="Remove redundant file type class, add max height restriction depending on orientation" />
     <MESSAGE value="Fix even symbols drawing" />
     <MESSAGE value="Change user_name in database to tg username from user first name" />
@@ -404,6 +414,7 @@
     <MESSAGE value="Relocate dbs to data folder" />
     <MESSAGE value="Add amvera configuration file" />
     <MESSAGE value="Remove incorrect amvera configuration file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove incorrect amvera configuration file" />
+    <MESSAGE value="Make secrets invisible, remove config file from gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make secrets invisible, remove config file from gitignore" />
   </component>
 </project>
