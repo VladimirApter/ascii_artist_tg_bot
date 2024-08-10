@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Remove redundant imports, change requirements">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change amvera.yml to fix cv2 import problem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/create_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/create_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/extract_frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/extract_frames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amvera.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amvera.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add simple processing">
-      <created>1720180056202</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1720180056202</updated>
     </task>
     <task id="LOCAL-00003" summary="Add ascii artist to the project and adjust it">
       <created>1720213323701</created>
@@ -404,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723316074138</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Change amvera.yml to fix cv2 import problem">
+      <created>1723318019323</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1723318019323</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix video restart possibility bug" />
     <MESSAGE value="Add commands handle, restart by commands possibility, video duration limit" />
     <MESSAGE value="Add bot breakdown treatment, max video duration limit" />
     <MESSAGE value="Add ads showing" />
@@ -444,6 +442,7 @@
     <MESSAGE value="Send exception text to owner tg" />
     <MESSAGE value="Test mode for amvera" />
     <MESSAGE value="Remove redundant imports, change requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove redundant imports, change requirements" />
+    <MESSAGE value="Change amvera.yml to fix cv2 import problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change amvera.yml to fix cv2 import problem" />
   </component>
 </project>
