@@ -26,6 +26,11 @@ def make_result(message, user_data: UserData):
     bot.send_message(message.chat.id, 'Загружаю твой файл', reply_markup=types.ReplyKeyboardRemove())
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
+
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     with open(file_path, 'wb') as f:
         f.write(downloaded_file)
 
@@ -47,6 +52,10 @@ def send_result(message, user_data: UserData):
 
     str_file_type = 'photo' if isinstance(user_data.media, PhotoData) else 'video'
     bot.send_chat_action(message.chat.id, f'upload_{str_file_type}')
+
+    directory = os.path.dirname(result_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
     with open(result_path, 'rb') as result_file:
         try:

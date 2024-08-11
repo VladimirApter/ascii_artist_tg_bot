@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Set lower numpy version">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Set certain versions of numpy and opencv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,20 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add bg and font colors survey, remove rgb split from ascii artist">
-      <created>1720705239799</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1720705239800</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add symbols survey, fix font bug">
-      <created>1720785844776</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1720785844776</updated>
     </task>
     <task id="LOCAL-00011" summary="Add colors survey buttons">
       <created>1720952175972</created>
@@ -402,7 +389,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723369341110</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Set certain versions of numpy and opencv">
+      <created>1723370561616</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1723370561616</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Set certain versions of numpy and opencv">
+      <created>1723370571265</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1723370571265</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -417,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add show ad for advertiser possibility, add send breakdown message to owner" />
     <MESSAGE value="Add ads database, ads statistic, statistic commands for advertiser" />
     <MESSAGE value="Little improvements, adjust tutorial timing" />
     <MESSAGE value="Edit text messages" />
@@ -442,6 +442,7 @@
     <MESSAGE value="Try to use only dockerfile" />
     <MESSAGE value="Change dockerfile to fix numpy problem" />
     <MESSAGE value="Set lower numpy version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set lower numpy version" />
+    <MESSAGE value="Set certain versions of numpy and opencv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set certain versions of numpy and opencv" />
   </component>
 </project>
