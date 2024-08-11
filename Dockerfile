@@ -1,14 +1,6 @@
 # Используем официальный образ Python 3.11
 FROM python:3.11
 
-# Установка системных зависимостей
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    && rm -rf /var/lib/apt/lists/*
-
 # Создание рабочей директории
 WORKDIR /app
 

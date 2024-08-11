@@ -20,7 +20,6 @@ ads_db_work.create_table()
 def breakdown_handler(handler):
     def inner(message):
         if bot_is_broken:
-            bot.send_message(owner_chat_id, 'Бот сломался')
             bot.send_message(message.chat.id, 'Бот временно не работает, попробуй написать позже')
         else:
             handler(message)
@@ -81,5 +80,6 @@ bot.polling(none_stop=True)
         if 'bot was blocked by the user' in str(e):
             pass
         else:
+            bot.send_message(owner_chat_id, 'Бот сломался')
             bot.send_message(owner_chat_id, f'EXCEPTION: {str(e)}')
             bot_is_broken = True'''
