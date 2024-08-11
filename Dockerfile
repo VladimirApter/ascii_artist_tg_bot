@@ -15,8 +15,11 @@ WORKDIR /app
 # Копирование файла requirements.txt
 COPY requirements.txt .
 
-# Установка Python зависимостей
+# Установка конкретных версий NumPy и OpenCV
 RUN pip install --no-cache-dir numpy==1.23.0
+RUN pip install --no-cache-dir opencv-python==4.5.5.64
+
+# Установка остальных зависимостей
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копирование остального кода
