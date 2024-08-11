@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Add folders that not existing making">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
-    </list>
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile, remove ascii artist exception handle" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,13 +56,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add validation of user input">
-      <created>1721030880378</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1721030880378</updated>
     </task>
     <task id="LOCAL-00013" summary="Add modes survey, true color mode">
       <created>1721042341880</created>
@@ -405,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723373120770</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Change dockerfile, remove ascii artist exception handle">
+      <created>1723374377255</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1723374377255</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -420,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Little improvements, adjust tutorial timing" />
     <MESSAGE value="Edit text messages" />
     <MESSAGE value="Relocate ads data examples" />
     <MESSAGE value="Final version" />
@@ -445,6 +439,7 @@
     <MESSAGE value="Set lower numpy version" />
     <MESSAGE value="Set certain versions of numpy and opencv" />
     <MESSAGE value="Add folders that not existing making" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add folders that not existing making" />
+    <MESSAGE value="Change dockerfile, remove ascii artist exception handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change dockerfile, remove ascii artist exception handle" />
   </component>
 </project>
