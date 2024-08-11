@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Revert amvera.yml" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Try to use dockerfile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,13 +56,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add simple photo processing">
-      <created>1720217962508</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1720217962508</updated>
     </task>
     <task id="LOCAL-00005" summary="Add simple video processing, fix ascii artist bugs">
       <created>1720353786518</created>
@@ -400,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723318890835</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Try to use dockerfile">
+      <created>1723366823540</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1723366823540</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add bot breakdown treatment, max video duration limit" />
     <MESSAGE value="Add ads showing" />
     <MESSAGE value="Add update ads data by admin_command" />
     <MESSAGE value="Add inline button for url and url caption in ads" />
@@ -440,6 +439,7 @@
     <MESSAGE value="Remove redundant imports, change requirements" />
     <MESSAGE value="Change amvera.yml to fix cv2 import problem" />
     <MESSAGE value="Revert amvera.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert amvera.yml" />
+    <MESSAGE value="Try to use dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to use dockerfile" />
   </component>
 </project>
