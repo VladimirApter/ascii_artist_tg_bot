@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile to fix numpy problem">
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Set lower numpy version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +58,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add height survey, refactor result sending">
-      <created>1720563447806</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1720563447806</updated>
     </task>
     <task id="LOCAL-00009" summary="Add bg and font colors survey, remove rgb split from ascii artist">
       <created>1720705239799</created>
@@ -403,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723368819427</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Set lower numpy version">
+      <created>1723369341110</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1723369341110</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +417,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add admin commands handle, database statistic" />
     <MESSAGE value="Add show ad for advertiser possibility, add send breakdown message to owner" />
     <MESSAGE value="Add ads database, ads statistic, statistic commands for advertiser" />
     <MESSAGE value="Little improvements, adjust tutorial timing" />
@@ -443,6 +441,7 @@
     <MESSAGE value="Change dockerfile" />
     <MESSAGE value="Try to use only dockerfile" />
     <MESSAGE value="Change dockerfile to fix numpy problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change dockerfile to fix numpy problem" />
+    <MESSAGE value="Set lower numpy version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set lower numpy version" />
   </component>
 </project>
