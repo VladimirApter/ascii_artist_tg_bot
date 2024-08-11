@@ -16,7 +16,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Установка Python зависимостей
-RUN pip install --no-cache-dir numpy
+RUN pip install --no-cache-dir numpy==1.23.0
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копирование остального кода
