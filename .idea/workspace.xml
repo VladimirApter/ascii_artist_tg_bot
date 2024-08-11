@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Try to use dockerfile" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Try to use only dockerfile">
+      <change beforePath="$PROJECT_DIR$/amvera.yml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,20 +58,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Add simple video processing, fix ascii artist bugs">
-      <created>1720353786518</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1720353786518</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Split to several files, solve multi user problem">
-      <created>1720533958949</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1720533958949</updated>
     </task>
     <task id="LOCAL-00007" summary="Add user data, moved the result making to a separate file">
       <created>1720558208001</created>
@@ -400,7 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723366823540</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Change dockerfile">
+      <created>1723367463703</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1723367463703</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Try to use only dockerfile">
+      <created>1723367924784</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1723367924784</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,8 +417,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ads showing" />
-    <MESSAGE value="Add update ads data by admin_command" />
     <MESSAGE value="Add inline button for url and url caption in ads" />
     <MESSAGE value="Add admin commands handle, database statistic" />
     <MESSAGE value="Add show ad for advertiser possibility, add send breakdown message to owner" />
@@ -440,6 +440,8 @@
     <MESSAGE value="Change amvera.yml to fix cv2 import problem" />
     <MESSAGE value="Revert amvera.yml" />
     <MESSAGE value="Try to use dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to use dockerfile" />
+    <MESSAGE value="Change dockerfile" />
+    <MESSAGE value="Try to use only dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to use only dockerfile" />
   </component>
 </project>
