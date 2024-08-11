@@ -13,7 +13,11 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Создание необходимых директорий
-RUN mkdir -p /path/to/your/directory
+RUN mkdir -p /app/ads_data
+RUN mkdir -p /app/ascii_artist/frames
+RUN mkdir -p /app/ascii_artist/images
+RUN mkdir -p /app/ascii_artist/result_frames
+RUN mkdir -p /app/ascii_artist/videos
 
 # Копирование файла requirements.txt
 COPY requirements.txt .

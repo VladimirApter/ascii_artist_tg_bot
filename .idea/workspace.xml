@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile, remove ascii artist exception handle" />
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add modes survey, true color mode">
-      <created>1721042341880</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1721042341880</updated>
     </task>
     <task id="LOCAL-00014" summary="Change font to noto monospaced">
       <created>1721043389062</created>
@@ -400,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723374377255</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Change dockerfile">
+      <created>1723374995255</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1723374995255</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -433,13 +436,13 @@
     <MESSAGE value="Change amvera.yml to fix cv2 import problem" />
     <MESSAGE value="Revert amvera.yml" />
     <MESSAGE value="Try to use dockerfile" />
-    <MESSAGE value="Change dockerfile" />
     <MESSAGE value="Try to use only dockerfile" />
     <MESSAGE value="Change dockerfile to fix numpy problem" />
     <MESSAGE value="Set lower numpy version" />
     <MESSAGE value="Set certain versions of numpy and opencv" />
     <MESSAGE value="Add folders that not existing making" />
     <MESSAGE value="Change dockerfile, remove ascii artist exception handle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change dockerfile, remove ascii artist exception handle" />
+    <MESSAGE value="Change dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change dockerfile" />
   </component>
 </project>
