@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change amvera.yml to fix cv2 import problem">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amvera.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amvera.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Revert amvera.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,13 +56,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add ascii artist to the project and adjust it">
-      <created>1720213323701</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1720213323701</updated>
     </task>
     <task id="LOCAL-00004" summary="Add simple photo processing">
       <created>1720217962508</created>
@@ -403,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723318019323</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Revert amvera.yml">
+      <created>1723318890835</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1723318890835</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add commands handle, restart by commands possibility, video duration limit" />
     <MESSAGE value="Add bot breakdown treatment, max video duration limit" />
     <MESSAGE value="Add ads showing" />
     <MESSAGE value="Add update ads data by admin_command" />
@@ -443,6 +439,7 @@
     <MESSAGE value="Test mode for amvera" />
     <MESSAGE value="Remove redundant imports, change requirements" />
     <MESSAGE value="Change amvera.yml to fix cv2 import problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change amvera.yml to fix cv2 import problem" />
+    <MESSAGE value="Revert amvera.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert amvera.yml" />
   </component>
 </project>
