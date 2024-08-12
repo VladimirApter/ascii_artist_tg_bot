@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_commands_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_messages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ads_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/admin_ads_commands_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users_db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
@@ -71,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720177446883</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Change font to noto monospaced">
-      <created>1721043389062</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1721043389062</updated>
     </task>
     <task id="LOCAL-00015" summary="Add restart possibility">
       <created>1721302762137</created>
@@ -415,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723374995255</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Add ads adding and deleting by admin ads commands. Improve video result quality. Set tutorial height limit. Make admin commands available only for owners. Add showing all admin commands.">
+      <created>1723471332155</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1723471332155</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edit text messages" />
     <MESSAGE value="Relocate ads data examples" />
     <MESSAGE value="Final version" />
     <MESSAGE value="Add requirements" />
@@ -455,6 +442,7 @@
     <MESSAGE value="Add folders that not existing making" />
     <MESSAGE value="Change dockerfile, remove ascii artist exception handle" />
     <MESSAGE value="Change dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change dockerfile" />
+    <MESSAGE value="Add ads adding and deleting by admin ads commands. Improve video result quality. Set tutorial height limit. Make admin commands available only for owners. Add showing all admin commands." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ads adding and deleting by admin ads commands. Improve video result quality. Set tutorial height limit. Make admin commands available only for owners. Add showing all admin commands." />
   </component>
 </project>
