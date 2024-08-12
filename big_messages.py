@@ -35,3 +35,16 @@ big_result_error_message =  'К сожалению результат получ
                             'попробуй использовать меньше символов по ' \
                             'вертикали при обработке, это поможет уменьшить ' \
                             'размер арта'
+
+all_admin_commands = '/update_ads_config\n' \
+                     '/get_users_count\n' \
+                     '/get_top_active_users\n' \
+                     '/get_average_counts\n' \
+                     '/get_first_20_users\n' \
+                     '/get_user_by_name @username\n' \
+                     '/get_all_admin_commands\n' \
+                     '/add_new_ad\n' \
+                     '/delete_ad_by_id id\n' \
+                     '/show_ad_by_id id\n' \
+                     '/show_ad_statistic_by_id id\n' \
+                     '/show_ad_for_user_statistic_by_id_and_name id @username\n'

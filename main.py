@@ -1,9 +1,10 @@
+import admin_ads_commands_handle
 import ads_db_work
 import photo_processing
 import video_processing
 from telebot import types
 
-from config import bot, owner_chat_id
+from config import bot, owner_chat_ids
 import users_db_work
 import commands_handle
 import admin_commands_handle
@@ -30,6 +31,7 @@ def breakdown_handler(handler):
 commands_handle.register_commands()
 admin_commands_handle.register_commands()
 advertiser_commands_handle.register_commands()
+admin_ads_commands_handle.register_commands()
 
 
 @bot.message_handler(content_types=['photo'])
@@ -70,8 +72,7 @@ def incorrect_input(message):
         bot.send_message(message.chat.id, message_text, reply_markup=types.ReplyKeyboardRemove())
 
 
-bot.polling(none_stop=True)
-'''while True:
+while True:
     try:
         bot.polling(none_stop=True)
     except Exception as e:
@@ -80,6 +81,6 @@ bot.polling(none_stop=True)
         if 'bot was blocked by the user' in str(e):
             pass
         else:
-            bot.send_message(owner_chat_id, 'Бот сломался')
-            bot.send_message(owner_chat_id, f'EXCEPTION: {str(e)}')
-            bot_is_broken = True'''
+            bot.send_message(owner_chat_ids[0], 'Бот сломался')
+            bot.send_message(owner_chat_ids[0], f'EXCEPTION: {str(e)}')
+            bot_is_broken = True

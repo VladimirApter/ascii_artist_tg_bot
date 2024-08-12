@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Change dockerfile">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_commands_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ads_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii_artist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ascii_artist/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ads_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/admin_ads_commands_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users_db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +52,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }

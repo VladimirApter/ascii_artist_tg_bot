@@ -101,8 +101,14 @@ def get_height(message, user_data: UserData):
     else:
         if 1 <= height <= max_height:
             valid = True
+        if user_data.first_time and height > 100:
+            valid = False
 
     if not valid:
+        if user_data.first_time:
+            bot.send_message(message.chat.id, 'Пока что число символов должно быть меньше 100, после того как пройдешь обучение можно будет вводить до 1000 символов! Попробуй пожалуйста еще раз')
+            bot.register_next_step_handler(message, get_height, user_data)
+            return
         bot.send_message(message.chat.id, 'Количество символов для '
                          f'{user_data.russian_orientation} '
                          f'{user_data.russian_file_type} '

@@ -31,6 +31,8 @@ def main(file_path, result_height, bg_color=(0, 0, 0), font_color=(255, 255, 255
 
     photo_quality = max(200 - result_height, 50)
     video_quality = photo_quality * 0.7
+    if result_height <= 30:
+        video_quality = 100
 
     if file_format == 'jpg' or file_format == 'png':
         _process_image(result_height, file_path, symbols, is_RGB, bg_color,

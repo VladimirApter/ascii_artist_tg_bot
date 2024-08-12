@@ -32,17 +32,13 @@ def make_result(message, user_data: UserData):
 
     bot.send_message(message.chat.id, 'Начал обрабатывать')
 
-    '''try:
+    try:
         ascii_artist.main.main(file_path, height, bg_color, font_color, symbols, true_color_mode)
         os.unlink(file_path)
     except:
             bot.send_message(message.chat.id, big_messages.big_result_error_message)
     else:
-        send_result(message, user_data)'''
-
-    ascii_artist.main.main(file_path, height, bg_color, font_color, symbols, true_color_mode)
-    os.unlink(file_path)
-    send_result(message, user_data)
+        send_result(message, user_data)
 
 
 def send_result(message, user_data: UserData):

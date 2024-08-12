@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Создание необходимых директорий
-RUN mkdir -p /app/ads_data
+RUN mkdir -p /app/data/ads_data
 RUN mkdir -p /app/ascii_artist/frames
 RUN mkdir -p /app/ascii_artist/images
 RUN mkdir -p /app/ascii_artist/result_frames

@@ -1,40 +1,64 @@
-from config import bot
+from config import bot, owner_chat_ids
 import ads_config
 import users_db_statistic
+import big_messages
+
+
+def is_user_owner_handler(handler):
+    def inner(message):
+        if message.chat.id not in owner_chat_ids:
+            bot.send_message(message.chat.id, 'У вас нет прав доступа на эту команду')
+            bot.send_message(owner_chat_ids[0], 'Кто-то пытался ввести команду админа')
+        else:
+            handler(message)
+
+    return inner
 
 
 def register_commands():
     from main import breakdown_handler
 
-    @bot.message_handler(commands=['admin_command_update_ads_config'])
+    @bot.message_handler(commands=['update_ads_config'])
     @breakdown_handler
+    @is_user_owner_handler
     def update_ads_config(message):
         update_ads_config_handler(message)
 
-    @bot.message_handler(commands=['admin_command_get_users_count'])
+    @bot.message_handler(commands=['get_users_count'])
     @breakdown_handler
+    @is_user_owner_handler
     def get_users_count(message):
         get_users_count_handler(message)
 
-    @bot.message_handler(commands=['admin_command_get_top_active_users'])
+    @bot.message_handler(commands=['get_top_active_users'])
     @breakdown_handler
+    @is_user_owner_handler
     def get_top_active_users(message):
         get_top_active_users_handler(message)
 
-    @bot.message_handler(commands=['admin_command_get_average_counts'])
+    @bot.message_handler(commands=['get_average_counts'])
     @breakdown_handler
+    @is_user_owner_handler
     def get_average_counts(message):
         get_average_counts_handler(message)
 
-    @bot.message_handler(commands=['admin_command_get_first_20_users'])
+    @bot.message_handler(commands=['get_first_20_users'])
     @breakdown_handler
+    @is_user_owner_handler
     def get_first_20_users(message):
         get_first_20_users_handler(message)
 
-    @bot.message_handler(commands=['admin_command_get_user_by_name'])
+    @bot.message_handler(commands=['get_user_by_name'])
     @breakdown_handler
+    @is_user_owner_handler
     def get_user_by_name(message):
         get_user_by_name_handler(message)
+
+    @bot.message_handler(commands=['get_all_admin_commands'])
+    @breakdown_handler
+    @is_user_owner_handler
+    def get_all_admin_commands(message):
+        get_all_admin_commands_handler(message)
 
 
 def update_ads_config_handler(message):
@@ -82,3 +106,7 @@ def get_user_by_name_handler(message):
         return
     id, photo_count, video_count = users_db_statistic.get_user_by_name(user_name)
     bot.send_message(message.chat.id, f'{user_name} data - id: {id}, photo count: {photo_count}, video count: {video_count}')
+
+
+def get_all_admin_commands_handler(message):
+    bot.send_message(message.chat.id, big_messages.all_admin_commands)

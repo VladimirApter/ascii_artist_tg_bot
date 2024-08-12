@@ -4,7 +4,7 @@ import ads
 import ads_db_work
 from config import CURRENT_DIR
 
-ADS_MEDIA_DIR = os.path.join(CURRENT_DIR, 'ads_data')
+ADS_MEDIA_DIR = os.path.join(CURRENT_DIR, 'data', 'ads_data')
 
 ADS_BEARER = ads.AdsBearer()
 
@@ -41,14 +41,13 @@ def extract_data(folder_path):
                 caption = file.read()
         elif item == 'url.txt':
             with open(item_path, 'r', encoding='utf-8') as file:
-                lines = file.readlines()
-                if len(lines) > 0:
-                    url = lines[0].strip()
-                if len(lines) > 1:
-                    url_caption = lines[1].strip()
+                url = file.read()
         elif item == 'id.txt':
             with open(item_path, 'r', encoding='utf-8') as file:
                 id = file.read().strip()
+        elif item == 'url_caption.txt':
+            with open(item_path, 'r', encoding='utf-8') as file:
+                url_caption = file.read()
 
     return images_paths, videos_paths, caption, url, url_caption, id
 
