@@ -4,7 +4,7 @@ import photo_processing
 import video_processing
 from telebot import types
 
-from config import bot, owner_chat_ids
+from config import bot, owner_chat_ids, make_ads_data_dir
 import users_db_work
 import commands_handle
 import admin_commands_handle
@@ -13,6 +13,8 @@ from data_structures import *
 
 
 bot_is_broken = False
+
+make_ads_data_dir()
 
 users_db_work.create_table()
 ads_db_work.create_table()
