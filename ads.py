@@ -64,7 +64,7 @@ class Ad:
                     media_group.append(media_type(media=media_file))
                 is_first_file = False
 
-        if len(media_group) == 1:
+        if len(media_group) == 1 and self.url is not None and self.url_caption is not None:
             is_photo = len(self.images_paths) != 0
             media_file = open_files[0]
             self.show_single_media_ad(message, media_file, is_photo)
