@@ -131,11 +131,11 @@ def url_handler(message):
 
 
 def url_caption_handler(message):
-    if none_handler(message, None, 'Ad added successfully! Now use /admin_command_update_ads_config to update ads configuration'):
+    if none_handler(message, None, 'Ad added successfully! Now use /update_ads_config to update ads configuration'):
         pass
     else:
         save_text_to_file('url_caption.txt', message.text)
-        bot.send_message(message.chat.id, 'Ad added successfully! Now use /admin_command_update_ads_config to update ads configuration')
+        bot.send_message(message.chat.id, 'Ad added successfully! Now use /update_ads_config to update ads configuration')
 
     global current_ad_id, current_ad_dir
     current_ad_id = ''
@@ -148,7 +148,7 @@ def delete_ad_id_handler(message):
         ad_dir = os.path.join(ads_data_dir_path, str(ad_id))
         if os.path.exists(ad_dir):
             rmtree(ad_dir)
-            bot.send_message(message.chat.id, f'Ad with id {ad_id} deleted successfully. Now use /admin_command_update_ads_config to update ads configuration')
+            bot.send_message(message.chat.id, f'Ad with id {ad_id} deleted successfully. Now use /update_ads_config to update ads configuration')
         else:
             bot.send_message(message.chat.id, f'Ad with id {ad_id} does not exist.')
     except ValueError:
