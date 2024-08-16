@@ -44,7 +44,7 @@ all_admin_commands = '/update_ads_config\n' \
                      '/get_user_by_name @username\n' \
                      '/get_all_admin_commands\n' \
                      '/add_new_ad\n' \
-                     '/delete_ad_by_id id\n' \
+                     '/delete_ad_by_id  \n' \
                      '/show_ad_by_id id\n' \
                      '/show_ad_statistic_by_id id\n' \
                      '/show_ad_for_user_statistic_by_id_and_name id @username\n'

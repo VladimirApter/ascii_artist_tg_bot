@@ -37,6 +37,8 @@ def make_result(message, user_data: UserData):
         os.unlink(file_path)
     except:
             bot.send_message(message.chat.id, big_messages.big_result_error_message)
+            os.unlink(file_path)
+            return
     else:
         send_result(message, user_data)
 
@@ -61,6 +63,7 @@ def send_result(message, user_data: UserData):
                 bot.send_document(message.chat.id, result_file)
         except ApiTelegramException:
             bot.send_message(message.chat.id, big_messages.big_result_error_message)
+            return
 
     os.unlink(result_path)
 

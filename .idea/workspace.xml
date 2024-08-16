@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1669aea3-1344-4ff1-85a6-3e5340104ca5" name="Changes" comment="Fix mount data directory problem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_ads_commands_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_ads_commands_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ads.py" beforeDir="false" afterPath="$PROJECT_DIR$/ads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_messages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_survey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_with_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_with_result.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +45,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/admin/Projects/ascii_artist_tg_bot",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }

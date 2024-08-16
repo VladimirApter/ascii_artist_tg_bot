@@ -106,7 +106,7 @@ def get_height(message, user_data: UserData):
 
     if not valid:
         if user_data.first_time:
-            bot.send_message(message.chat.id, 'Пока что число символов должно быть меньше 100, после того как пройдешь обучение можно будет вводить до 1000 символов! Попробуй пожалуйста еще раз')
+            bot.send_message(message.chat.id, f'Пока что число символов должно быть меньше 100, после того как пройдешь обучение можно будет вводить до {PhotoData.vertical_max_height} символов! Попробуй пожалуйста еще раз')
             bot.register_next_step_handler(message, get_height, user_data)
             return
         bot.send_message(message.chat.id, 'Количество символов для '
@@ -116,6 +116,11 @@ def get_height(message, user_data: UserData):
                          f'попробуй еще раз')
         bot.register_next_step_handler(message, get_height, user_data)
         return
+
+    media = user_data.media
+    big_height = int((media.horizontal_max_height if media.orientation == Orientation.horizontal else media.vertical_max_height) / 2)
+    if height > big_height:
+        bot.send_message(message.chat.id, f'Окей, но символов достаточно много, так что я буду обрабатывать {user_data.russian_file_type} чуть дольше чем обычно')
 
     user_data.height = height
 

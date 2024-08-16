@@ -17,8 +17,8 @@ class Orientation(Enum):
 
 
 class PhotoData:
-    horizontal_max_height = 600
-    vertical_max_height = 1000
+    horizontal_max_height = 500
+    vertical_max_height = 800
 
     def __init__(self, file_id: str, file_path: str,
                  result_path: str, orientation: Orientation):
@@ -36,7 +36,7 @@ class PhotoData:
 
 class VideoData:
     horizontal_max_height = 100
-    vertical_max_height = 200
+    vertical_max_height = 180
     max_duration = 15
 
     def __init__(self, file_id: str, file_path: str,

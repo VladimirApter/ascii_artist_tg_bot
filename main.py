@@ -76,7 +76,7 @@ def incorrect_input(message):
 
 while True:
     try:
-        bot.polling(none_stop=True)
+        bot.infinity_polling(timeout=10, long_polling_timeout=5)
     except Exception as e:
         if bot_is_broken:
             continue
