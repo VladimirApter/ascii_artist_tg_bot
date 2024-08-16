@@ -74,7 +74,13 @@ def send_result(message, user_data: UserData):
         elif isinstance(user_data.media, VideoData):
             users_db_work.update_user_data(user_id, 0, 1)
 
-        bot.send_message(message.chat.id, 'Готово! Можешь присылать следующий файл', reply_markup=types.ReplyKeyboardRemove())
+        big_height = int(user_data.media.max_height / 2)
+        if user_data.height > big_height:
+            bot.send_message(message.chat.id, f'Готово!', reply_markup=types.ReplyKeyboardRemove())
+            bot.send_message(message.chat.id, f'Чтобы качество было лучше сохрани {user_data.russian_file_type} и посмотри в галерее')
+            bot.send_message(message.chat.id, 'Можешь присылать следующий файл')
+        else:
+            bot.send_message(message.chat.id, 'Готово! Можешь присылать следующий файл', reply_markup=types.ReplyKeyboardRemove())
 
         ads_config.ADS_BEARER.show_ad(message)
     else:

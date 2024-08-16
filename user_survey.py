@@ -117,8 +117,7 @@ def get_height(message, user_data: UserData):
         bot.register_next_step_handler(message, get_height, user_data)
         return
 
-    media = user_data.media
-    big_height = int((media.horizontal_max_height if media.orientation == Orientation.horizontal else media.vertical_max_height) / 2)
+    big_height = int(user_data.media.max_height / 2)
     if height > big_height:
         bot.send_message(message.chat.id, f'Окей, но символов достаточно много, так что я буду обрабатывать {user_data.russian_file_type} чуть дольше чем обычно')
 
