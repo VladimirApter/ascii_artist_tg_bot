@@ -1,7 +1,7 @@
 # ASCII artist telegram bot
 
 [ASCII artist](https://t.me/ascii_artist_bot) - это телеграмм бот, 
-который делает ascii арты из картинок.
+который делает ascii арты из картинок и видео.
 
 Обычный режим обработки
 ![default mode example](default_mode_example.jpg)
